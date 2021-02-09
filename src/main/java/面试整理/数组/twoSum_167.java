@@ -1,5 +1,8 @@
 package 面试整理.数组;
 
+/**
+ * 碰撞指针
+ */
 public class twoSum_167 {
     public int[] twoSum(int[] numbers, int target) {
         int l = 0, r = numbers.length - 1;
