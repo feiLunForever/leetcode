@@ -1,4 +1,4 @@
-package 面试整理.数组;
+package 面试整理.查找表;
 
 import java.util.HashSet;
 import java.util.Set;
