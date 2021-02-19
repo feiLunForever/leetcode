@@ -23,7 +23,9 @@ public class combine_77 {
             res.add(new ArrayList<>(deque));
             return;
         }
-        for (int i = index; i <= n; i++) {
+        // deque 还有 k - deque.size() 个空位
+        // 所以i 最大为 n - (k - deque.size()) + 1
+        for (int i = index; i <= n - (k - deque.size()) + 1; i++) {
             deque.add(i);
             dfs(n, k, i + 1, deque, res);
             deque.remove(deque.size() - 1);
