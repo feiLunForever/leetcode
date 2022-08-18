@@ -51,6 +51,10 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Two Sum II - Input Array Is Sorted
  *
@@ -78,6 +82,28 @@ public class P167_TwoSumIiInputArrayIsSorted {
                 }
             }
             return new int[]{-1, -1};
+        }
+
+
+        public List<List<Integer>> twoSum1(int[] numbers, int target) {
+            Arrays.sort(numbers);
+            List<List<Integer>> res = new LinkedList<>();
+            int left = 0, right = numbers.length - 1;
+            while (left < right) {
+                int mid = numbers[left] + numbers[right];
+                int leftV = numbers[left];
+                int rightV = numbers[right];
+                if (mid == target) {
+                    res.add(new LinkedList<>(Arrays.asList(numbers[left], numbers[right])));
+                    while (left < right && numbers[left] == leftV) left++;
+                    while (left < right && numbers[right] == rightV) right--;
+                } else if (mid < target) {
+                    while (left < right && numbers[left] == leftV) left++;
+                } else {
+                    while (left < right && numbers[right] == rightV) right--;
+                }
+            }
+            return res;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
