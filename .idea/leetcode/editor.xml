@@ -36,6 +36,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P990_SatisfiabilityOfEqualityEquations.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P990_SatisfiabilityOfEqualityEquations.md" />
+              <option name="frontendQuestionId" value="leetcode.cn990" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P990_SatisfiabilityOfEqualityEquations.java" />
+              <option name="titleSlug" value="satisfiability-of-equality-equations" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
