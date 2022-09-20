@@ -48,6 +48,7 @@ package labuladong.leetcode.editor.cn;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Course Schedule
@@ -59,7 +60,7 @@ public class P207_CourseSchedule {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P207_CourseSchedule().new Solution();
-        System.out.println(solution.canFinish(2, new int[][]{{1, 0}, {0, 1}}));
+//        System.out.println(solution.canFinish1(2, new int[][]{{1, 0}, {0, 1}}));
     }
 
     //力扣代码
@@ -68,7 +69,7 @@ public class P207_CourseSchedule {
         // 记录图中是否有环
         boolean hasCycle = false;
 
-        public boolean canFinish(int numCourses, int[][] prerequisites) {
+        public boolean canFinish1(int numCourses, int[][] prerequisites) {
             List<Integer>[] graph = buildGraph(numCourses, prerequisites); // 构建图
 
             boolean[] onPath = new boolean[numCourses]; // 记录一次 traverse 递归经过的节点
@@ -106,6 +107,52 @@ public class P207_CourseSchedule {
                 graph[from].add(to);
             }
             return graph;
+        }
+
+
+        /*--------------------------------------------------------------------------------------*/
+
+        public boolean canFinish(int numCourses, int[][] prerequisites) {
+            List<Integer>[] graph = buildGraph(numCourses, prerequisites); // 构建图
+
+            int[] inDegree = buildInDegree(numCourses, prerequisites); // 构建入度数组
+
+            Queue<Integer> queue = buildRootQueue(inDegree); // 构建入度为0的根节点队列
+
+            int count = 0; // 记录遍历的节点个数
+
+            while (!queue.isEmpty()) {
+                Integer cur = queue.poll(); // 弹出节点 cur，并将它指向的节点的入度减一
+                count++; // 计数
+                for(int next : graph[cur]){
+                    inDegree[next]--; // 入度-1
+                    if(inDegree[next] == 0){
+                        queue.add(next); // 如果入度变为 0，说明 next 依赖的节点都已被遍历
+                    }
+                }
+            }
+
+            return count == numCourses; // 如果所有节点都被遍历过，说明不成环
+        }
+
+        private Queue<Integer> buildRootQueue(int[] inDegrees) {
+            Queue<Integer> queue = new LinkedList<>();
+            for (int i = 0; i < inDegrees.length; i++) {
+                if (inDegrees[i] == 0) { // 将入度为0的节点加入队列
+                    queue.add(i);
+                }
+            }
+            return queue;
+        }
+
+        private int[] buildInDegree(int numCourses, int[][] prerequisites) {
+            int[] inDegree = new int[numCourses];
+            for (int[] edge : prerequisites) {
+                int from = edge[1];
+                int to = edge[0];
+                inDegree[to]++;
+            }
+            return inDegree;
         }
 
 
