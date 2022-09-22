@@ -42,9 +42,7 @@
 
 package labuladong.leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Min Cost to Connect All Points
@@ -56,13 +54,13 @@ public class P1584_MinCostToConnectAllPoints {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P1584_MinCostToConnectAllPoints().new Solution();
-		System.out.println(solution.minCostConnectPoints(new int[][]{{0,0},{2,2},{3,10},{5,2},{7,0}}));
-	}
+        System.out.println(solution.minCostConnectPoints(new int[][]{{0, 0}, {2, 2}, {3, 10}, {5, 2}, {7, 0}}));
+    }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        public int minCostConnectPoints(int[][] points) {
+        public int minCostConnectPoints1(int[][] points) {
             int n = points.length;
             List<int[]> edges = new ArrayList<>();
             for (int i = 0; i < n; i++) { // 构建边
@@ -88,42 +86,123 @@ public class P1584_MinCostToConnectAllPoints {
             }
             return total;
         }
-    }
 
-    public class UnionFind {
-		public int count; // 连通分量个数
-		public final int[] parent; // 记录每个节点的父节点
+        public int minCostConnectPoints(int[][] points) {
+            List<int[]>[] graph = buildGraph(points);
+            Prim prim = new Prim(graph);
+            return prim.weight();
+        }
 
-        public UnionFind(int count) {
-            this.count = count;
-            this.parent = new int[count];
-            for (int i = 0; i < count; i++) {
-                parent[i] = i;
+        private List<int[]>[] buildGraph(int[][] points) {
+            List<int[]>[] graph = new LinkedList[points.length];
+            for (int i = 0; i < graph.length; i++) {
+                graph[i] = new LinkedList<>();
+            }
+            for (int i = 0; i < points.length; i++) {
+                for (int j = i + 1; j < points.length; j++) {
+                    int x0 = points[i][0], y0 = points[i][1];
+                    int x1 = points[j][0], y1 = points[j][1];
+                    int weight = Math.abs(x0 - x1) + Math.abs(y0 - y1);
+                    graph[i].add(new int[]{i, j, weight});
+                    graph[j].add(new int[]{j, i, weight});
+                }
+            }
+            return graph;
+        }
+
+
+        public class UnionFind {
+            public int count; // 连通分量个数
+            public final int[] parent; // 记录每个节点的父节点
+
+            public UnionFind(int count) {
+                this.count = count;
+                this.parent = new int[count];
+                for (int i = 0; i < count; i++) {
+                    parent[i] = i;
+                }
+            }
+
+            public int find(int x) {
+                if (x != parent[x]) {
+                    parent[x] = find(parent[x]);
+                }
+                return parent[x];
+            }
+
+            public void union(int p, int q) {
+                int rootP = find(p);
+                int rootQ = find(q);
+                if (rootP != rootQ) {
+                    parent[rootP] = rootQ;
+                    count--;
+                }
+            }
+
+            public boolean connected(int p, int q) {
+                return find(p) == find(q);
+            }
+
+            public int count() {
+                return this.count;
             }
         }
 
-        public int find(int x) {
-            if (x != parent[x]) {
-                parent[x] = find(parent[x]);
+        public class Prim {
+            // 三元组 int[]{from, to, weight} 表示一条边
+            private final PriorityQueue<int[]> queue = new PriorityQueue<>(Comparator.comparingInt(o -> o[2])); // 存储横切边的优先级队列
+
+            private boolean[] visited; // 记录该节点是否成为最小生成树中
+
+            private int total;
+
+            private List<int[]>[] graph; // 邻接表，graph[s] 代表s节点所有相邻的边
+
+            public Prim(List<int[]>[] graph) {
+                this.graph = graph;
+                int n = graph.length;
+                visited = new boolean[n];
+
+                // 从第一个节点开始切割
+                visited[0] = true;
+                cut(0); // 将节点s的横边加入队列中
+                while (!queue.isEmpty()) { // 不断进行切分，向最小生成树中添加边
+                    int[] edge = queue.poll();
+                    int to = edge[1];
+                    if (visited[to]) {
+                        continue;
+                    }
+                    total += edge[2];
+                    visited[to] = true;
+                    cut(to); // 节点 to 加入后，进行新一轮切分，会产生更多横切边
+                }
             }
-            return parent[x];
-        }
 
-        public void union(int p, int q) {
-            int rootP = find(p);
-            int rootQ = find(q);
-            if (rootP != rootQ) {
-                parent[rootP] = rootQ;
-                count--;
+            public void cut(int s) {
+                // 遍历s的邻边
+                for (int[] edge : graph[s]) {
+                    int from = edge[0];
+                    int to = edge[1];
+                    int weight = edge[2];
+                    if (visited[to]) { // 相邻接点 to 已经在最小生成树中，跳过，否则这条边会产生环
+                        continue;
+                    }
+                    queue.offer(edge);
+                }
             }
-        }
 
-        public boolean connected(int p, int q) {
-            return find(p) == find(q);
-        }
+            public int weight() {
+                return total;
+            }
 
-        public int count() {
-            return this.count;
+            public boolean allConnected() {
+                for (boolean visit : visited) {
+                    if (!visit) {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
