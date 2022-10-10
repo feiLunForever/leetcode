@@ -80,6 +80,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P211_DesignAddAndSearchWordsDataStructure.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P211_DesignAddAndSearchWordsDataStructure.md" />
+              <option name="frontendQuestionId" value="leetcode.cn211" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P211_DesignAddAndSearchWordsDataStructure.java" />
+              <option name="titleSlug" value="design-add-and-search-words-data-structure" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P460_LfuCache.java">
           <value>
             <LeetcodeEditor>
