@@ -190,6 +190,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P583_DeleteOperationForTwoStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P583_DeleteOperationForTwoStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.cn583" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P583_DeleteOperationForTwoStrings.java" />
+              <option name="titleSlug" value="delete-operation-for-two-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P648_ReplaceWords.java">
           <value>
             <LeetcodeEditor>
