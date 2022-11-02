@@ -3,6 +3,17 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P1024_VideoStitching.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P1024_VideoStitching.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1024" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P1024_VideoStitching.java" />
+              <option name="titleSlug" value="video-stitching" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P10_RegularExpressionMatching.java">
           <value>
             <LeetcodeEditor>
