@@ -586,6 +586,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P659_SplitArrayIntoConsecutiveSubsequences.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P659_SplitArrayIntoConsecutiveSubsequences.md" />
+              <option name="frontendQuestionId" value="leetcode.cn659" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P659_SplitArrayIntoConsecutiveSubsequences.java" />
+              <option name="titleSlug" value="split-array-into-consecutive-subsequences" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P677_MapSumPairs.java">
           <value>
             <LeetcodeEditor>
