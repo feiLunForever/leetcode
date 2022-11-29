@@ -410,6 +410,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P43_MultiplyStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P43_MultiplyStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.cn43" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P43_MultiplyStrings.java" />
+              <option name="titleSlug" value="multiply-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P452_MinimumNumberOfArrowsToBurstBalloons.java">
           <value>
             <LeetcodeEditor>
