@@ -53,7 +53,9 @@ public class P34_FindFirstAndLastPositionOfElementInSortedArray {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] searchRange(int[] nums, int target) {
-            if (nums.length == 0) return new int[]{-1, -1};
+            if (nums.length == 0) {
+                return new int[]{-1, -1};
+            }
             return new int[]{leftBound(nums, target), rightBound(nums, target)};
         }
 
