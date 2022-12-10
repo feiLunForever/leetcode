@@ -34,6 +34,8 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.Arrays;
+
 /**
  * Find First and Last Position of Element in Sorted Array
  *
@@ -44,19 +46,26 @@ public class P34_FindFirstAndLastPositionOfElementInSortedArray {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P34_FindFirstAndLastPositionOfElementInSortedArray().new Solution();
+        System.out.println(Arrays.toString(solution.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 6)));
     }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] searchRange(int[] nums, int target) {
+            if (nums.length == 0) return new int[]{-1, -1};
             return new int[]{leftBound(nums, target), rightBound(nums, target)};
         }
 
         private int leftBound(int[] nums, int target) {
+
             int left = 0, right = nums.length - 1;
+            if (target < nums[left] || target > nums[right]) {
+                return -1;
+            }
+
             while (left <= right) {
-                int mid = left + (right - left) / 2;
+                int mid = left + ((right - left) >> 1);
                 if (nums[mid] < target) {
                     left = mid + 1;
                 } else if (nums[mid] > target) {
@@ -65,16 +74,16 @@ public class P34_FindFirstAndLastPositionOfElementInSortedArray {
                     right = mid - 1;
                 }
             }
-            if (left >= nums.length || nums[left] != target) {
-                return -1;
-            }
-            return left;
+            return nums[left] == target ? left : -1;
         }
 
         private int rightBound(int[] nums, int target) {
             int left = 0, right = nums.length - 1;
+            if (target < nums[left] || target > nums[right]) {
+                return -1;
+            }
             while (left <= right) {
-                int mid = left + (right - left) / 2;
+                int mid = left + ((right - left) >> 1);
                 if (nums[mid] < target) {
                     left = mid + 1;
                 } else if (nums[mid] > target) {
@@ -83,10 +92,7 @@ public class P34_FindFirstAndLastPositionOfElementInSortedArray {
                     left = mid + 1;
                 }
             }
-            if (right < 0 || nums[right] != target) {
-                return -1;
-            }
-            return right;
+            return nums[right] == target ? right : -1;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
