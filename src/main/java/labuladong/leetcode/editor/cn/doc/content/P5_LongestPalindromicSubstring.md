@@ -29,7 +29,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.0。**
 
 
 
@@ -103,12 +103,15 @@ class Solution {
   - [27. 移除元素 🟢](/problems/remove-element)
   - [283. 移动零 🟢](/problems/move-zeroes)
   - [344. 反转字符串 🟢](/problems/reverse-string)
+  - [658. 找到 K 个最接近的元素 🟠](/problems/find-k-closest-elements)
   - [83. 删除排序链表中的重复元素 🟢](/problems/remove-duplicates-from-sorted-list)
   - [剑指 Offer 57. 和为s的两个数字 🟢](/problems/he-wei-sde-liang-ge-shu-zi-lcof)
   - [剑指 Offer II 006. 排序数组中两个数字之和 🟢](/problems/kLl5u1)
 
 </details>
 </div>
+
+
 
 
 
