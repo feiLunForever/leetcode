@@ -62,7 +62,9 @@ public class P83_RemoveDuplicatesFromSortedList {
      */
     class Solution {
         public ListNode deleteDuplicates(ListNode head) {
-			if (head == null) return null;
+            if (head == null) {
+                return null;
+            }
             ListNode fast = head, slow = head;
             while (fast != null) {
                 if (fast.val != slow.val) {
@@ -71,7 +73,7 @@ public class P83_RemoveDuplicatesFromSortedList {
                 }
                 fast = fast.next;
             }
-            slow.next = null;
+            slow.next = null; // 断开与后面重复元素的连接
             return head;
         }
     }

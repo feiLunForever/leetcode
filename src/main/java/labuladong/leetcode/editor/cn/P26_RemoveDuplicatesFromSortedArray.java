@@ -71,6 +71,7 @@ public class P26_RemoveDuplicatesFromSortedArray {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P26_RemoveDuplicatesFromSortedArray().new Solution();
+        System.out.println(solution.removeDuplicates(new int[]{1, 1, 2}));
     }
 
     //力扣代码
