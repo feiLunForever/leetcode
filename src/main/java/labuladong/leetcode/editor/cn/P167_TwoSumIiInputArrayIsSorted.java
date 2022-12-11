@@ -71,14 +71,16 @@ public class P167_TwoSumIiInputArrayIsSorted {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] twoSum(int[] numbers, int target) {
-            int start = 0, end = numbers.length - 1;
-            while (start < end) {
-                if (numbers[start] + numbers[end] == target) {
-                    return new int[]{start + 1, end + 1};
-                } else if (numbers[start] + numbers[end] < target) {
-                    start++;
+            int left = 0, right = numbers.length - 1;
+            while (left < right) {
+                int sum = numbers[left] + numbers[right];
+                if (sum == target) {
+                    return new int[]{left + 1, right + 1};
+                }
+                if (sum > target) { // 求和结果 > 目标值，则让 sum 小一点
+                    --right;
                 } else {
-                    end--;
+                    ++left;
                 }
             }
             return new int[]{-1, -1};
