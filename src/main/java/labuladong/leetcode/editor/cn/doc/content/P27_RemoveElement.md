@@ -61,7 +61,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.0。**
 
 
 
@@ -72,7 +72,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 > 本文有视频版：[数组双指针技巧汇总](https://www.bilibili.com/video/BV1iG411W7Wm)
 
-类似 [26. 删除有序数组中的重复项](/problems/remove-duplicates-from-sorted-array)，需要使用 [双指针技巧](https://labuladong.github.io/article/fname.html?fname=双指针技巧) 中的快慢指针：
+类似 [26. 删除有序数组中的重复项](https://labuladong.github.io/article/fname.html?fname=双指针技巧) 中的快慢指针：
 
 如果 `fast` 遇到需要去除的元素，则直接跳过，否则就告诉 `slow` 指针，并让 `slow` 前进一步。
 
@@ -111,6 +111,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 

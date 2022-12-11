@@ -57,7 +57,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.0。**
 
 
 
@@ -116,6 +116,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 

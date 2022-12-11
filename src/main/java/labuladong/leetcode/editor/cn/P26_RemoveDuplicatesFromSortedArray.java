@@ -79,13 +79,13 @@ public class P26_RemoveDuplicatesFromSortedArray {
         public int removeDuplicates(int[] nums) {
             int fast = 0, slow = 0;
             while (fast < nums.length) {
-                if (nums[fast] != nums[slow]) {
-                    slow++;
-                    nums[slow] = nums[fast];
+                if (nums[slow] != nums[fast]) {
+                    ++slow;
+                    nums[slow] = nums[fast]; // 维护 nums[0..slow] 无重复
                 }
-                fast++;
+                ++fast;
             }
-            return slow + 1;
+            return slow + 1; // 数组长度为索引 + 1
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
