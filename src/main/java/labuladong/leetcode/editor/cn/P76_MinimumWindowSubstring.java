@@ -52,6 +52,7 @@
 package labuladong.leetcode.editor.cn;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Minimum Window Substring
@@ -71,6 +72,41 @@ public class P76_MinimumWindowSubstring {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String minWindow(String s, String t) {
+            Map<Character, Integer> need = new HashMap<>(t.length()); // 记录每个字符需要的个数
+            for (int i = 0; i < t.length(); i++) {
+                need.put(t.charAt(i), need.getOrDefault(t.charAt(i), 0) + 1);
+            }
+            Map<Character, Integer> window = new HashMap<>(); // 记录滑动窗口中，字符的个数
+            int left = 0, right = 0;
+            int match = 0; // 记录匹配字符的个数
+            int start = 0, length = Integer.MAX_VALUE; // 记录窗口的开始位置以及长度
+
+            while (right < s.length()) {
+                char ch = s.charAt(right++);
+                window.put(ch, window.getOrDefault(ch, 0) + 1); // 将该字符放入窗口中
+                if (need.containsKey(ch) && need.get(ch).equals(window.get(ch))) {
+                    ++match; // 该字符出现的次数一致时，匹配字符数 + 1
+                }
+                while (match == need.size()) { // 当窗口完全包含目标字符时，调整窗口
+                    if (right - left < length) { // 更新位置
+                        length = right - left;
+                        start = left;
+                    }
+                    char remove = s.charAt(left++); // 收缩窗口
+                    if (need.containsKey(remove)) {
+                        if (need.get(remove).equals(window.get(remove))) { // 只有该字符出现的次数一致时，才能代表之前match加过1
+                            --match;
+                        }
+                        window.put(remove, window.get(remove) - 1);
+                    }
+                }
+            }
+
+            return length == Integer.MAX_VALUE ? "" : s.substring(start, start + length);
+        }
+
+
+        /*public String minWindow1(String s, String t) {
             HashMap<Character, Integer> need = new HashMap<>(t.length());
             for (Character ch : t.toCharArray()) {
                 need.put(ch, need.getOrDefault(ch, 0) + 1);
@@ -103,7 +139,7 @@ public class P76_MinimumWindowSubstring {
             }
 
             return length == Integer.MAX_VALUE ? "" : s.substring(start, start + length);
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
