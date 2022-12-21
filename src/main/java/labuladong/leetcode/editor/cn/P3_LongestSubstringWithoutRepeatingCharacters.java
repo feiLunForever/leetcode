@@ -44,6 +44,7 @@
 package labuladong.leetcode.editor.cn;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Longest Substring Without Repeating Characters
@@ -55,13 +56,29 @@ public class P3_LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P3_LongestSubstringWithoutRepeatingCharacters().new Solution();
-		System.out.println(solution.lengthOfLongestSubstring("pwwkew"));
-	}
+        System.out.println(solution.lengthOfLongestSubstring("pwwkew"));
+    }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int lengthOfLongestSubstring(String s) {
+            Map<Character, Integer> window = new HashMap<>();
+            int left = 0, right = 0;
+            int max = 0;
+            while (right < s.length()) {
+                char ch = s.charAt(right++);
+                window.put(ch, window.getOrDefault(ch, 0) + 1);
+                while (window.get(ch) > 1) {
+                    char remove = s.charAt(left++);
+                    window.put(remove, window.get(remove) - 1);
+                }
+                max = Math.max(max, right - left);
+            }
+            return max;
+        }
+
+        /*public int lengthOfLongestSubstring(String s) {
             HashMap<Character, Integer> windows = new HashMap<>();
             int left = 0, right = 0;
             int max = 0;
@@ -77,7 +94,7 @@ public class P3_LongestSubstringWithoutRepeatingCharacters {
                 max = Math.max(max, right - left);
             }
             return max;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
