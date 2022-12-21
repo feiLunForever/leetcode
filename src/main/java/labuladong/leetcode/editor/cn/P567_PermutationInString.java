@@ -36,6 +36,7 @@
 package labuladong.leetcode.editor.cn;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Permutation in String
@@ -47,13 +48,43 @@ public class P567_PermutationInString {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P567_PermutationInString().new Solution();
-		System.out.println(solution.checkInclusion("abcdxabcde", "abcdxabcde"));
-	}
+        System.out.println(solution.checkInclusion("abcdxabcde", "abcdxabcde"));
+    }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean checkInclusion(String s1, String s2) {
+            Map<Character, Integer> need = new HashMap<>(s1.length()); // 记录每个字符出现的次数
+            for (int i = 0; i < s1.length(); i++) {
+                need.put(s1.charAt(i), need.getOrDefault(s1.charAt(i), 0) + 1);
+            }
+            int left = 0, right = 0;
+            int valid = 0; // 记录匹配的字符数量
+            Map<Character, Integer> window = new HashMap<>();
+            while (right < s2.length()) {
+                char ch = s2.charAt(right++);
+                window.put(ch, window.getOrDefault(ch, 0) + 1);
+                if (need.containsKey(ch) && need.get(ch).equals(window.get(ch))) {
+                    ++valid; // 出现字符的数量一致时，有效数 + 1
+                }
+                while (right - left >= s1.length()) {
+                    if (valid == need.size()) {
+                        return true;
+                    }
+                    char remove = s2.charAt(left++);
+                    if (need.containsKey(remove)) {
+                        if (need.get(remove).equals(window.get(remove))) {
+                            --valid;
+                        }
+                        window.put(remove, window.get(remove) - 1);
+                    }
+                }
+            }
+            return false;
+        }
+
+        /*public boolean checkInclusion(String s1, String s2) {
             HashMap<Character, Integer> need = new HashMap<>(s1.length());
             for (Character ch : s1.toCharArray()) {
                 need.put(ch, need.getOrDefault(ch, 0) + 1);
@@ -83,7 +114,7 @@ public class P567_PermutationInString {
                 }
             }
             return false;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
