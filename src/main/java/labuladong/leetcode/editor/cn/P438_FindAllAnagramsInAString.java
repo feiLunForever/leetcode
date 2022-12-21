@@ -41,9 +41,10 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Find All Anagrams in a String
@@ -55,13 +56,45 @@ public class P438_FindAllAnagramsInAString {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P438_FindAllAnagramsInAString().new Solution();
-		System.out.println(solution.findAnagrams("cbaebabacd", "abc"));
-	}
+        System.out.println(solution.findAnagrams("cbaebabacd", "abc"));
+    }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<Integer> findAnagrams(String s, String p) {
+            Map<Character, Integer> need = new HashMap<>(p.length());
+            for (int i = 0; i < p.length(); i++) {
+                need.put(p.charAt(i), need.getOrDefault(p.charAt(i), 0) + 1);
+            }
+            int left = 0, right = 0;
+            int valid = 0;
+            Map<Character, Integer> window = new HashMap<>();
+            List<Integer> rs = new ArrayList<>();
+            while (right < s.length()) {
+                char ch = s.charAt(right++);
+                window.put(ch, window.getOrDefault(ch, 0) + 1);
+                if (need.containsKey(ch) && need.get(ch).equals(window.get(ch))) {
+                    ++valid;
+                }
+                if (right - left >= p.length()) {
+                    if (valid == need.size()) {
+                        rs.add(left);
+                    }
+                    char remove = s.charAt(left++);
+                    if (need.containsKey(remove)) {
+                        if (need.get(remove).equals(window.get(remove))) {
+                            --valid;
+                        }
+                        window.put(remove, window.get(remove) - 1);
+                    }
+                }
+            }
+            return rs;
+        }
+
+
+        /*public List<Integer> findAnagrams(String s, String p) {
             HashMap<Character, Integer> need = new HashMap<>(p.length());
             HashMap<Character, Integer> windows = new HashMap<>();
             for (Character ch : p.toCharArray()) {
@@ -92,7 +125,7 @@ public class P438_FindAllAnagramsInAString {
                 }
             }
             return res;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
