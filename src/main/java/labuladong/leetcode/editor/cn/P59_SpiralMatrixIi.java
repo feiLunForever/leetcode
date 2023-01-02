@@ -41,13 +41,44 @@ public class P59_SpiralMatrixIi {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P59_SpiralMatrixIi().new Solution();
-		System.out.println(solution.generateMatrix(3));
-	}
+        System.out.println(solution.generateMatrix(3));
+    }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[][] generateMatrix(int n) {
+            int[][] res = new int[n][n];
+            circle(res, 0, 0, n - 1, n - 1, 1);
+            return res;
+        }
+
+
+        private void circle(int[][] res, int x1, int y1, int x2, int y2, int start) {
+            if (x1 > x2 || y1 > y2) {
+                return;
+            }
+            if (x1 == x2) { // 只剩下 [y1,y2] 这一列
+                for (int i = y1; i <= y2; i++) {
+                    res[x1][i] = start++;
+                }
+                return;
+            }
+            if (y1 == y2) { // 只剩下 [x1,x2] 这一行
+                for (int i = x1; i <= x2; i++) {
+                    res[i][y1] = start++;
+                }
+                return;
+            }
+            for (int i = y1; i < y2; i++) res[x1][i] = start++; // 右
+            for (int i = x1; i < x2; i++) res[i][y2] = start++; // 下
+            for (int i = y2; i > y1; i--) res[x2][i] = start++; // 左
+            for (int i = x2; i > x1; i--) res[i][y1] = start++; // 上
+
+            circle(res, x1 + 1, y1 + 1, x2 - 1, y2 - 1, start); // 缩小圈
+        }
+
+        /*public int[][] generateMatrix(int n) {
             int[][] res = new int[n][n];
             circle(res, 0, 0, n - 1, n - 1, 1);
             return res;
@@ -75,7 +106,7 @@ public class P59_SpiralMatrixIi {
             for (int i = x2; i > x1; i--) res[i][y1] = start++;
 
             circle(res, x1 + 1, y1 + 1, x2 - 1, y2 - 1, start); // 缩小圈
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
