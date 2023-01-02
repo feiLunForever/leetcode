@@ -48,7 +48,7 @@ numMatrix.sumRegion(1, 2, 2, 4); // return 12 (i.e sum of the blue rectangle)
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.8](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。过年前最后一期打卡挑战即将开始，[点这里报名](https://aep.xet.tech/s/1a9ByX)。**
 
 
 
@@ -106,6 +106,8 @@ class NumMatrix {
 
 </details>
 </div>
+
+
 
 
 
