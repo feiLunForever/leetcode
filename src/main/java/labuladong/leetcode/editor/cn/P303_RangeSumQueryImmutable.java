@@ -56,14 +56,28 @@ package labuladong.leetcode.editor.cn;
 public class P303_RangeSumQueryImmutable {
     public static void main(String[] args) {
         int[] nums = new int[]{-2, 0, 3, -5, 2, -1};
-        NumArray array = new NumArray(nums);
+        NumArray array = new P303_RangeSumQueryImmutable().new NumArray(nums);
         System.out.println(array.sumRange(2, 5));
     }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-    static class NumArray {
-        private int[] nums; //[a,b)
+    class NumArray {
+
+        private final int[] preNum; // 前缀和数组 [a,b) 左闭右开
+
+        public NumArray(int[] nums) {
+            preNum = new int[nums.length + 1]; // preNum[0] 便于累加计算
+            for (int i = 1; i <= nums.length; i++) {
+                preNum[i] = preNum[i - 1] + nums[i - 1];
+            }
+        }
+
+        public int sumRange(int left, int right) {
+            return preNum[right + 1] - preNum[left];
+        }
+
+        /*private int[] nums; //[a,b)
         private int[] cache;
 
         public NumArray(int[] nums) {
@@ -77,7 +91,7 @@ public class P303_RangeSumQueryImmutable {
 
         public int sumRange(int left, int right) {
             return cache[right + 1] - cache[left];
-        }
+        }*/
 
     }
 
