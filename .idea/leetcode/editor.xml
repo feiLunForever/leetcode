@@ -36,6 +36,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P1109_CorporateFlightBookings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P1109_CorporateFlightBookings.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1109" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P1109_CorporateFlightBookings.java" />
+              <option name="titleSlug" value="corporate-flight-bookings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P1143_LongestCommonSubsequence.java">
           <value>
             <LeetcodeEditor>

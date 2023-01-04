@@ -71,6 +71,51 @@ public class P1109_CorporateFlightBookings {
     class Solution {
 
         public int[] corpFlightBookings(int[][] bookings, int n) {
+            Difference diff = new Difference(new int[n]);
+            for (int[] booking : bookings) {
+                diff.add(booking[0] - 1, booking[1] - 1, booking[2]);
+            }
+            return diff.result();
+        }
+
+        class Difference {
+            private final int[] diff;
+
+            public Difference(int[] nums) {
+                this.diff = new int[nums.length];
+                diff[0] = nums[0];
+                for (int i = 1; i < nums.length; i++) {
+                    diff[i] = nums[i] - nums[i - 1];
+                }
+            }
+
+            public void add(int i, int j, int val) { // [i, j]上加上value值
+                diff[i] += val;
+                if (j + 1 < diff.length) {
+                    diff[j + 1] -= val;
+                }
+            }
+
+            public int[] result() {
+                int[] res = new int[diff.length];
+                res[0] = diff[0];
+                for (int i = 1; i < diff.length; i++) {
+                    res[i] = res[i - 1] + diff[i];
+                }
+                return res;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+        /*public int[] corpFlightBookings(int[][] bookings, int n) {
             Difference difference = new Difference(new int[n]);
             for (int[] booking : bookings) {
                 difference.adjust(booking[0] - 1, booking[1] - 1, booking[2]);
@@ -104,7 +149,7 @@ public class P1109_CorporateFlightBookings {
                 }
                 return res;
             }
-        }
+        }*/
 
     }
 //leetcode submit region end(Prohibit modification and deletion)
