@@ -55,7 +55,48 @@ public class P1094_CarPooling {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public boolean carPooling(int[][] trips, int capacity) {
+            Difference diff = new Difference(new int[1001]);
+            for (int[] trip : trips) {
+                int val = trip[0]; // 乘客数量
+                int i = trip[1]; // 第 trip[1] 站乘客上车
+                int j = trip[2] - 1; // 第 trip[2] 站乘客已经下车，即乘客在车上的区间是 [trip[1], trip[2] - 1]
+                diff.add(i, j, val);
+            }
+            return diff.check(capacity);
+        }
+
+        class Difference {
+            private final int[] diff;
+
+            public Difference(int[] nums) {
+                this.diff = new int[nums.length];
+                diff[0] = nums[0];
+                for (int i = 1; i < nums.length; i++) {
+                    diff[i] = nums[i] - nums[i - 1];
+                }
+            }
+
+            public void add(int i, int j, int val) {
+                diff[i] += val;
+                if (j + 1 < diff.length) {
+                    diff[j + 1] -= val;
+                }
+            }
+
+            public boolean check(int capacity) {
+                int pre = diff[0];
+                if (pre > capacity) return false;
+                for (int i = 1; i < diff.length; i++) {
+                    pre += diff[i];
+                    if (pre > capacity) return false;
+                }
+                return true;
+            }
+        }
+
+        /*public boolean carPooling(int[][] trips, int capacity) {
             Difference difference = new Difference(new int[1001]);
             for (int[] trip : trips) {
                 // 乘客数量
@@ -107,7 +148,7 @@ public class P1094_CarPooling {
                 }
                 return true;
             }
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
