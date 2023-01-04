@@ -50,7 +50,29 @@ public class P48_RotateImage {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public void rotate(int[][] matrix) {
+            int n = matrix.length;
+            for (int i = 0; i < n; i++) { // 先进行对角线镜像对称
+                for (int j = i; j < n; j++) {
+                    int temp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = temp;
+                }
+            }
+            for (int[] row : matrix) { // 再进行行镜像对称
+                int i = 0, j = row.length - 1;
+                while (i < j) {
+                    int temp = row[i];
+                    row[i] = row[j];
+                    row[j] = temp;
+                    ++i;
+                    --j;
+                }
+            }
+        }
+
+        /*public void rotate(int[][] matrix) {
             // 先根据对角线反转，再每一行反转
             int n = matrix.length;
             for (int i = 0; i < n; i++) {
@@ -69,7 +91,7 @@ public class P48_RotateImage {
             int temp = matrix[row1][rol1];
             matrix[row1][rol1] = matrix[row2][rol2];
             matrix[row2][rol2] = temp;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
