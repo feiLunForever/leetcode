@@ -52,7 +52,41 @@ public class P54_SpiralMatrix {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public List<Integer> spiralOrder(int[][] matrix) {
+            List<Integer> res = new LinkedList<>();
+            if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+                return res;
+            }
+            circle(matrix, 0, 0, matrix.length - 1, matrix[0].length - 1, res);
+            return res;
+        }
+
+        private void circle(int[][] matrix, int x1, int y1, int x2, int y2, List<Integer> res) {
+            if (x1 > x2 || y1 > y2) return;
+            if (x1 == x2) { // 只剩下y1 -> y2
+                for (int i = y1; i <= y2; i++) {
+                    res.add(matrix[x1][i]);
+                }
+                return;
+            }
+            if (y1 == y2) { // 只剩下x1 -> x2
+                for (int i = x1; i <= x2; i++) {
+                    res.add(matrix[i][y1]);
+                }
+                return;
+            }
+
+            for (int i = y1; i < y2; i++) res.add(matrix[x1][i]); // 右
+            for (int i = x1; i < x2; i++) res.add(matrix[i][y2]); // 下
+            for (int i = y2; i > y1; i--) res.add(matrix[x2][i]); // 左
+            for (int i = x2; i > x1; i--) res.add(matrix[i][y1]); // 上
+
+            circle(matrix, x1 + 1, y1 + 1, x2 - 1, y2 - 1, res); // 缩小范围
+        }
+
+
+        /*public List<Integer> spiralOrder(int[][] matrix) {
             List<Integer> res = new LinkedList<>();
             if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
                 return res;
@@ -81,7 +115,7 @@ public class P54_SpiralMatrix {
             for (int i = x2; i > x1; i--) res.add(matrix[i][y1]);
 
             circle(matrix, x1 + 1, y1 + 1, x2 - 1, y2 - 1, res); // 缩小圈
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
