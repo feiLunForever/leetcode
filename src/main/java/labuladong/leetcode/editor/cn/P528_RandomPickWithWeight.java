@@ -86,7 +86,42 @@ public class P528_RandomPickWithWeight {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
-        private final int[] preSum;
+        private final int[] preNum;
+
+        private final Random random = new Random();
+
+        public Solution(int[] w) {
+            int n = w.length;
+            preNum = new int[n + 1]; // 构建前缀和数组，偏移一位留给 preSum[0]
+            for (int i = 1; i <= n; i++) {
+                preNum[i] = preNum[i - 1] + w[i - 1];
+            }
+        }
+
+        public int pickIndex() {
+            int target = random.nextInt(preNum[preNum.length - 1]) + 1; // 在闭区间 [1, preSum[n - 1]] 中随机选择一个数字
+
+            return left_bound(preNum, target) - 1; // 别忘了前缀和数组 preSum 和原始数组 w 有一位索引偏移
+        }
+
+        private int left_bound(int[] preNum, int target) {
+            int left = 0, right = preNum.length;
+            while (left < right) {
+                int mid = left + (right - left) / 2;
+                if (preNum[mid] < target) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+            return left;
+        }
+
+
+
+
+
+        /*private final int[] preSum;
 
         private final Random random = new Random();
 
@@ -117,7 +152,7 @@ public class P528_RandomPickWithWeight {
                 }
             }
             return left;
-        }
+        }*/
     }
 
 /**
