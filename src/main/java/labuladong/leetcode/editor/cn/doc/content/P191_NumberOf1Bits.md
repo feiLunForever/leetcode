@@ -48,7 +48,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.0；[第 13 期刷题打卡](https://mp.weixin.qq.com/s/eUG2OOzY3k_ZTz-CFvtv5Q) 最后几天报名！**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。**
 
 
 
@@ -59,7 +59,7 @@
 
 `n & (n-1)` 这个操作是算法中常见的，作用是消除数字 `n` 的二进制表示中的最后一个 1：
 
-![](https://labuladong.github.io/algo/images/位操作/1.png)
+![](https://labuladong.gitee.io/pictures/位操作/1.png)
 
 不断消除数字 `n` 中的 1，直到 `n` 变为 0。
 
@@ -91,6 +91,8 @@ public class Solution {
 
 </details>
 </div>
+
+
 
 
 

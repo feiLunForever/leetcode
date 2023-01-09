@@ -46,7 +46,33 @@ public class P870_AdvantageShuffle {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public int[] advantageCount(int[] nums1, int[] nums2) {
+            int n = nums1.length;
+            PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) -> b[1] - a[1]);
+            for (int i = 0; i < n; i++) { // nums2 降序
+                queue.offer(new int[]{i, nums2[i]});
+            }
+            Arrays.sort(nums1); // nums1 升序
+            int left = 0, right = n - 1;
+            int[] res = new int[n];
+            while (!queue.isEmpty()) {
+                int[] items = queue.poll();
+                int index = items[0];
+                int value = items[1]; // value 是 nums2 中的最大值，i 是对应索引
+                if (nums1[right] > value) { // 如果 nums1[right] 能胜过 value，那就自己上
+                    res[index] = nums1[right];
+                    --right;
+                } else { // 否则用最小值混一下，养精蓄锐
+                    res[index] = nums1[left];
+                    ++left;
+                }
+            }
+            return res;
+        }
+
+
+        /*public int[] advantageCount(int[] nums1, int[] nums2) {
             PriorityQueue<int[]> priorityQueue = new PriorityQueue<>((int[] a, int[] b) -> b[1] - a[1]);
             for (int i = 0; i < nums2.length; i++) {
                 priorityQueue.add(new int[]{i, nums2[i]});
@@ -65,7 +91,7 @@ public class P870_AdvantageShuffle {
                 }
             }
             return res;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
