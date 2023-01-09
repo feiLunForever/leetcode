@@ -44,7 +44,7 @@ randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom()
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.8](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。**
 
 
 
@@ -119,11 +119,14 @@ class RandomizedSet {
 ```
 
 **类似题目**：
+  - [519. 随机翻转矩阵 🟠](/problems/random-flip-matrix)
   - [710. 黑名单中的随机数 🔴](/problems/random-pick-with-blacklist)
   - [剑指 Offer II 030. 插入、删除和随机访问都是 O(1) 的容器 🟠](/problems/FortPu)
 
 </details>
 </div>
+
+
 
 
 

@@ -63,20 +63,58 @@ public class P380_InsertDeleteGetrandomO1 {
     public static void main(String[] args) {
         //测试代码
 //	 	 Solution solution = new P380_InsertDeleteGetrandomO1().new Solution();
-        RandomizedSet randomizedSet = new RandomizedSet();
-        System.out.println(randomizedSet.remove(0));
-        System.out.println(randomizedSet.remove(0));
-        System.out.println(randomizedSet.insert(0));
+        RandomizedSet randomizedSet = new P380_InsertDeleteGetrandomO1().new RandomizedSet();
+        System.out.println(randomizedSet.insert(1));
+        System.out.println(randomizedSet.remove(2));
+        System.out.println(randomizedSet.insert(2));
         System.out.println(randomizedSet.getRandom());
-        System.out.println(randomizedSet.remove(0));
-        System.out.println(randomizedSet.insert(0));
+        System.out.println(randomizedSet.remove(1));
+        System.out.println(randomizedSet.insert(2));
+        System.out.println(randomizedSet.getRandom());
     }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-    static class RandomizedSet {
+    class RandomizedSet {
 
-        Map<Integer, Integer> map;
+        private final ArrayList<Integer> data; // 存放元素的值
+
+        private final Map<Integer, Integer> val2Index; // key -> item, value -> index
+
+        private final Random random = new Random();
+
+        public RandomizedSet() {
+            data = new ArrayList<>();
+            val2Index = new HashMap<>();
+        }
+
+        public boolean insert(int val) {
+            if (!val2Index.containsKey(val)) { // 若val不存在，插入到nums尾部，并记录val对应的索引值
+                val2Index.put(val, data.size());
+                data.add(val);
+                return true;
+            }
+            return false; // 若 val 已存在，不用再插入
+        }
+
+        public boolean remove(int val) {
+            if (val2Index.containsKey(val)) {
+                int index = val2Index.get(val); // 需要删除节点的下标
+                int last = data.get(data.size() - 1); // 当前最后一个值
+                data.set(index, last); // 将最后一个值的下标替换成要删除节点的下标
+                val2Index.put(last, index); // 更新索引映射
+                data.remove(data.size() - 1); // 删除最后一个值
+                val2Index.remove(val); // 删除索引映射
+                return true;
+            }
+            return false;
+        }
+
+        public int getRandom() {
+            return data.get(random.nextInt(data.size()));
+        }
+
+        /*Map<Integer, Integer> map;
         ArrayList<Integer> data;
 
         public RandomizedSet() {
@@ -110,7 +148,7 @@ public class P380_InsertDeleteGetrandomO1 {
         public int getRandom() {
             Random random = new Random();
             return data.get(random.nextInt(data.size()));
-        }
+        }*/
     }
 
 /**
