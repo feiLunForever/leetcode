@@ -883,6 +883,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P710_RandomPickWithBlacklist.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P710_RandomPickWithBlacklist.md" />
+              <option name="frontendQuestionId" value="leetcode.cn710" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P710_RandomPickWithBlacklist.java" />
+              <option name="titleSlug" value="random-pick-with-blacklist" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P712_MinimumAsciiDeleteSumForTwoStrings.java">
           <value>
             <LeetcodeEditor>

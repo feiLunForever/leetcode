@@ -71,7 +71,37 @@ public class P710_RandomPickWithBlacklist {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
-        Random random = new Random();
+        private final Random random = new Random();
+
+        private final Map<Integer, Integer> mappings;
+
+        private final int sz;
+
+        public Solution(int n, int[] blacklist) {
+            sz = n - blacklist.length;
+            mappings = new HashMap<>(blacklist.length);
+            for (int black : blacklist) {
+                mappings.put(black, -1);
+            }
+            int last = n - 1;
+            for (int black : blacklist) {
+                if (black >= sz) { // 如果已经在 [sz, n) 区间内，则忽略
+                    continue;
+                }
+                while (mappings.containsKey(last)) { // 从后往前找到第一个不是黑名单的元素
+                    --last;
+                }
+                mappings.put(black, last); // 更新角标映射
+                --last;
+            }
+        }
+
+        public int pick() {
+            int index = random.nextInt(sz);
+            return mappings.getOrDefault(index, index); // 如果映射到黑名单，则返回映射值，否则直接返回
+        }
+
+        /*Random random = new Random();
 
         Map<Integer, Integer> black;
 
@@ -102,7 +132,7 @@ public class P710_RandomPickWithBlacklist {
                 return black.get(index);
             }
             return index;
-        }
+        }*/
     }
 
 /**
