@@ -71,7 +71,32 @@ public class P496_NextGreaterElementI {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+            Map<Integer, Integer> num2Greater = nextGreaterElement(nums2);
+            int n = nums1.length;
+            int[] res = new int[n];
+            for (int i = 0; i < n; i++) {
+                res[i] = num2Greater.get(nums1[i]);
+            }
+            return res;
+        }
+
+        private Map<Integer, Integer> nextGreaterElement(int[] nums) {
+            int n = nums.length;
+            Map<Integer, Integer> map = new HashMap<>(n);
+            Stack<Integer> stack = new Stack<>();
+            for (int i = n - 1; i >= 0; i--) { // 从后往前遍历
+                while (!stack.isEmpty() && stack.peek() <= nums[i]) {
+                    stack.pop(); // 去掉小的元素
+                }
+                map.put(nums[i], stack.isEmpty() ? -1 : stack.peek());
+                stack.push(nums[i]);
+            }
+            return map;
+        }
+
+        /*public int[] nextGreaterElement(int[] nums1, int[] nums2) {
             int[] greaterElement = nextGreaterElement(nums2);
             int[] res = new int[nums1.length];
             Map<Integer, Integer> nums2Greater = new HashMap<>(nums2.length);
@@ -96,7 +121,7 @@ public class P496_NextGreaterElementI {
                 stack.push(nums[i]);
             }
             return res;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
