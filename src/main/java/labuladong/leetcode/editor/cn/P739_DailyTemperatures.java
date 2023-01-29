@@ -48,7 +48,22 @@ public class P739_DailyTemperatures {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public int[] dailyTemperatures(int[] temperatures) {
+            int n = temperatures.length;
+            int[] res = new int[n];
+            Stack<Integer> stack = new Stack<>(); // 这里放元素索引，而不是元素
+            for (int i = n - 1; i >= 0; i--) {
+                while (!stack.isEmpty() && temperatures[stack.peek()] <= temperatures[i]) {
+                    stack.pop();
+                }
+                res[i] = stack.isEmpty() ? 0 : (stack.peek() - i); // 得到索引间距
+                stack.push(i); // 将索引入栈，而不是元素
+            }
+            return res;
+        }
+
+        /*public int[] dailyTemperatures(int[] temperatures) {
             int n = temperatures.length;
             int[] res = new int[n];
             Stack<Integer> stack = new Stack<>();
@@ -60,7 +75,7 @@ public class P739_DailyTemperatures {
                 stack.push(i);
             }
             return res;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
