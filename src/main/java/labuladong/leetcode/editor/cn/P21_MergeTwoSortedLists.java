@@ -73,7 +73,30 @@ public class P21_MergeTwoSortedLists {
      * }
      */
     class Solution {
+
         public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+            ListNode root = new ListNode(-1); // 虚拟头结点
+            ListNode p = root, p1 = list1, p2 = list2;
+            while (p1 != null && p2 != null) {
+                if (p1.val < p2.val) {
+                    p.next = p1;
+                    p1 = p1.next;
+                } else {
+                    p.next = p2;
+                    p2 = p2.next;
+                }
+                p = p.next;
+            }
+            if (p1 != null) {
+                p.next = p1;
+            }
+            if (p2 != null) {
+                p.next = p2;
+            }
+            return root.next;
+        }
+
+        /*public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
             ListNode listNode = new ListNode(-1);
             ListNode p1 = list1, p2 = list2, p = listNode;
             while (p1 != null && p2 != null) {
@@ -92,7 +115,7 @@ public class P21_MergeTwoSortedLists {
                 p.next = p2;
             }
             return listNode.next;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
