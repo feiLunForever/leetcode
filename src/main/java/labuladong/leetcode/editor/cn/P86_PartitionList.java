@@ -64,6 +64,25 @@ public class P86_PartitionList {
      */
     class Solution {
         public ListNode partition(ListNode head, int x) {
+            ListNode big = new ListNode(-1), small = new ListNode(-1);
+            ListNode p = head, p1 = big, p2 = small;
+            while (p != null) {
+                if (p.val < x) {
+                    p2.next = p;
+                    p2 = p2.next;
+                } else {
+                    p1.next = p;
+                    p1 = p1.next;
+                }
+                p = p.next;
+            }
+            p1.next = null;
+            p2.next = big.next;
+            return small.next;
+        }
+
+
+        /*public ListNode partition(ListNode head, int x) {
             ListNode small = new ListNode(-1);
             ListNode big = new ListNode(-1);
             ListNode p1 = small, p2 = big, p = head;
@@ -80,7 +99,7 @@ public class P86_PartitionList {
             p1.next = big.next;
             p2.next = null;
             return small.next;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
