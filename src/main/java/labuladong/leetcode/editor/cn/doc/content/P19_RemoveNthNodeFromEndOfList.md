@@ -40,7 +40,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。**
 
 
 
@@ -59,15 +59,15 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 第一步，我们先让一个指针 `p1` 指向链表的头节点 `head`，然后走 `k` 步：
 
-![](https://labuladong.github.io/algo/images/链表技巧/1.jpeg)
+![](https://labuladong.gitee.io/pictures/链表技巧/1.jpeg)
 
 第二步，用一个指针 `p2` 指向链表头节点 `head`：
 
-![](https://labuladong.github.io/algo/images/链表技巧/2.jpeg)
+![](https://labuladong.gitee.io/pictures/链表技巧/2.jpeg)
 
 第三步，让 `p1` 和 `p2` 同时向前走，`p1` 走到链表末尾的空指针时走了 `n - k` 步，`p2` 也走了 `n - k` 步，也就是链表的倒数第 `k` 个节点：
 
-![](https://labuladong.github.io/algo/images/链表技巧/3.jpeg)
+![](https://labuladong.gitee.io/pictures/链表技巧/3.jpeg)
 
 这样，只遍历了一次链表，就获得了倒数第 `k` 个节点 `p2`。
 
@@ -130,6 +130,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 

@@ -72,7 +72,23 @@ public class P19_RemoveNthNodeFromEndOfList {
      * }
      */
     class Solution {
+
         public ListNode removeNthFromEnd(ListNode head, int n) {
+            ListNode root = new ListNode(-1);
+            root.next = head;
+            ListNode fast = root, slow = root;
+            for (int i = 0; i < n + 1; i++) { // 先走n + 1步（找到倒数第n + 1个节点）
+                fast = fast.next;
+            }
+            while (fast != null) {
+                fast = fast.next;
+                slow = slow.next;
+            }
+            slow.next = slow.next.next;
+            return root.next;
+        }
+
+        /*public ListNode removeNthFromEnd(ListNode head, int n) {
 			ListNode listNode = new ListNode(-1);
 			listNode.next = head;
 			ListNode fast = listNode, slow = listNode;
@@ -85,7 +101,7 @@ public class P19_RemoveNthNodeFromEndOfList {
             }
             slow.next = slow.next.next;
             return listNode.next;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
