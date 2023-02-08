@@ -49,7 +49,7 @@ merging them into one sorted list:
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。**
 
 
 
@@ -60,7 +60,7 @@ merging them into one sorted list:
 
 > 本文有视频版：[链表双指针技巧全面汇总](https://www.bilibili.com/video/BV1q94y1X7vy)
 
-[21. 合并两个有序链表](/problems/merge-two-sorted-lists) 的延伸，利用 [优先级队列（二叉堆）](https://labuladong.github.io/article/fname.html?fname=二叉堆详解实现优先级队列) 进行节点排序即可。
+[21. 合并两个有序链表](https://labuladong.github.io/article/fname.html?fname=二叉堆详解实现优先级队列) 进行节点排序即可。
 
 **详细题解：[双指针技巧秒杀七道链表题目](https://labuladong.github.io/article/fname.html?fname=链表技巧)**
 
@@ -105,7 +105,10 @@ class Solution {
   - [160. 相交链表 🟢](/problems/intersection-of-two-linked-lists)
   - [19. 删除链表的倒数第 N 个结点 🟠](/problems/remove-nth-node-from-end-of-list)
   - [21. 合并两个有序链表 🟢](/problems/merge-two-sorted-lists)
-  - [264. 丑数 II 🟠](/problems/ugly-number-ii)
+  - [313. 超级丑数 🟠](/problems/super-ugly-number)
+  - [355. 设计推特 🟠](/problems/design-twitter)
+  - [373. 查找和最小的 K 对数字 🟠](/problems/find-k-pairs-with-smallest-sums)
+  - [378. 有序矩阵中第 K 小的元素 🟠](/problems/kth-smallest-element-in-a-sorted-matrix)
   - [86. 分隔链表 🟠](/problems/partition-list)
   - [876. 链表的中间结点 🟢](/problems/middle-of-the-linked-list)
   - [剑指 Offer 22. 链表中倒数第k个节点 🟢](/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof)
@@ -114,10 +117,13 @@ class Solution {
   - [剑指 Offer II 021. 删除链表的倒数第 n 个结点 🟠](/problems/SLwz0R)
   - [剑指 Offer II 022. 链表中环的入口节点 🟠](/problems/c32eOV)
   - [剑指 Offer II 023. 两个链表的第一个重合节点 🟢](/problems/3u1WK4)
+  - [剑指 Offer II 061. 和最小的 k 个数对 🟠](/problems/qn8gGX)
   - [剑指 Offer II 078. 合并排序链表 🔴](/problems/vvXgSW)
 
 </details>
 </div>
+
+
 
 
 

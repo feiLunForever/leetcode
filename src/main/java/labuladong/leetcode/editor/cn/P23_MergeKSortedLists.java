@@ -84,7 +84,30 @@ public class P23_MergeKSortedLists {
      * }
      */
     class Solution {
+
         public ListNode mergeKLists(ListNode[] lists) {
+            ListNode root = new ListNode(-1);
+            ListNode p = root;
+            Queue<ListNode> queue = new PriorityQueue<>((v1, v2) -> v1.val - v2.val);
+
+            for (ListNode node : lists) {
+                if (node != null) {
+                    queue.offer(node);
+                }
+            }
+
+            while (!queue.isEmpty()) {
+                ListNode node = queue.poll();
+                p.next = node;
+                if (node.next != null) {
+                    queue.offer(node.next);
+                }
+                p = p.next;
+            }
+            return root.next;
+        }
+
+        /*public ListNode mergeKLists(ListNode[] lists) {
             ListNode listNode = new ListNode(-1);
             ListNode p = listNode;
             Queue<ListNode> queue = new PriorityQueue<>((v1, v2) -> v1.val - v2.val);
@@ -105,7 +128,7 @@ public class P23_MergeKSortedLists {
                 p = p.next;
             }
             return listNode.next;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
