@@ -64,6 +64,7 @@ public class P876_MiddleOfTheLinkedList {
      * }
      */
     class Solution {
+
         public ListNode middleNode(ListNode head) {
             ListNode fast = head, slow = head;
             while (fast != null && fast.next != null) {
@@ -72,6 +73,15 @@ public class P876_MiddleOfTheLinkedList {
             }
             return slow;
         }
+
+        /*public ListNode middleNode(ListNode head) {
+            ListNode fast = head, slow = head;
+            while (fast != null && fast.next != null) {
+                fast = fast.next.next;
+                slow = slow.next;
+            }
+            return slow;
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
