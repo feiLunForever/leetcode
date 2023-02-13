@@ -69,7 +69,7 @@ Explanation: The two lists do not intersect, so return null.
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。**
 
 
 
@@ -84,7 +84,7 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 这题难点在于，由于两条链表的长度可能不同，两条链表之间的节点无法对应：
 
-![](https://labuladong.github.io/algo/images/链表技巧/5.jpeg)
+![](https://labuladong.gitee.io/pictures/链表技巧/5.jpeg)
 
 如果用两个指针 `p1` 和 `p2` 分别在两条链表上前进，并不能**同时**走到公共节点，也就无法得到相交节点 `c1`。
 
@@ -94,7 +94,7 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 如果这样进行拼接，就可以让 `p1` 和 `p2` 同时进入公共部分，也就是同时到达相交节点 `c1`：
 
-![](https://labuladong.github.io/algo/images/链表技巧/6.jpeg)
+![](https://labuladong.gitee.io/pictures/链表技巧/6.jpeg)
 
 另一种思路，先计算两条链表的长度，然后让 `p1` 和 `p2` 距离链表尾部的距离相同，然后齐头并进，
 
@@ -141,6 +141,8 @@ public class Solution {
 
 </details>
 </div>
+
+
 
 
 
