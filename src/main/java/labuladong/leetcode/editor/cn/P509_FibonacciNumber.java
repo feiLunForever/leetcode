@@ -64,6 +64,18 @@ public class P509_FibonacciNumber {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int fib(int n) {
+            if (n == 0 || n == 1) return n;
+            int dp0 = 0, dp1 = 1, dp = 0;
+            for (int i = 2; i <= n; i++) {
+                dp = dp0 + dp1;
+                dp0 = dp1;
+                dp1 = dp;
+            }
+            return dp;
+        }
+
+
+        /*public int fib(int n) {
 //            int[] dp = new int[n + 1];
 //            dp[0] = 0;
 //            dp[1] = 1;
@@ -79,7 +91,7 @@ public class P509_FibonacciNumber {
                 dp1 = dp;
             }
             return dp;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
