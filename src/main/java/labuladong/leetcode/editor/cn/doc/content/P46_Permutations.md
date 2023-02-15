@@ -25,7 +25,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，第 17 期刷题打卡 [开始报名](https://aep.xet.tech/s/2jPp5X)。**
 
 
 
@@ -40,7 +40,7 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 [回溯算法详解](https://labuladong.github.io/article/fname.html?fname=回溯算法详解修订版) 中就是拿这个问题来解释回溯模板的，首先画出回溯树来看一看：
 
-![](https://labuladong.github.io/algo/images/子集/3.jpg)
+![](https://labuladong.gitee.io/pictures/子集/3.jpg)
 
 写代码遍历这棵回溯树即可。
 
@@ -80,7 +80,7 @@ class Solution {
             // 排除不合法的选择
             if (used[i]) {/**<extend up -200>
 
-![](https://labuladong.github.io/algo/images/backtracking/6.jpg)
+![](https://labuladong.gitee.io/pictures/backtracking/6.jpg)
 */
                 // nums[i] 已经在 track 中，跳过
                 continue;
@@ -116,6 +116,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 

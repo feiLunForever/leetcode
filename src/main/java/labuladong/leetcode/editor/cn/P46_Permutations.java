@@ -29,6 +29,7 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -47,7 +48,35 @@ public class P46_Permutations {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public List<List<Integer>> permute(int[] nums) {
+            LinkedList<Integer> trace = new LinkedList<>();
+            boolean[] used = new boolean[nums.length];
+            List<List<Integer>> res = new ArrayList<>();
+
+            backTrack(nums, trace, used, res);
+
+            return res;
+        }
+
+        private void backTrack(int[] nums, LinkedList<Integer> trace, boolean[] used, List<List<Integer>> res) {
+            if (trace.size() == nums.length) {
+                res.add(new ArrayList<>(trace));
+                return;
+            }
+            for (int i = 0; i < nums.length; i++) {
+                if (used[i]) continue;
+
+                trace.add(nums[i]);
+                used[i] = true;
+                backTrack(nums, trace, used, res);
+
+                trace.removeLast();
+                used[i] = false;
+            }
+        }
+
+        /*public List<List<Integer>> permute(int[] nums) {
             List<List<Integer>> res = new LinkedList<>();
             LinkedList<Integer> queue = new LinkedList<>();
 
@@ -75,7 +104,7 @@ public class P46_Permutations {
                     used[i] = false;
                 }
             }
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
