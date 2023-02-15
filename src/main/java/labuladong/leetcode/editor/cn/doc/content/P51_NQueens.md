@@ -32,7 +32,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，第 17 期刷题打卡 [开始报名](https://aep.xet.tech/s/2jPp5X)。**
 
 
 
@@ -64,7 +64,7 @@ def backtrack(路径，选择列表):
 
 回溯算法框架就是遍历决策树的过程：
 
-![](https://labuladong.github.io/algo/images/backtracking/7.jpg)
+![](https://labuladong.gitee.io/pictures/backtracking/7.jpg)
 
 关于回溯算法的详细讲解可以看 [46. 全排列](/problems/permutations) 或者详细题解。
 
@@ -102,7 +102,7 @@ class Solution {
             // 排除不合法选择
             if (!isValid(board, row, col)) {/**<extend up -200>
 
-![](https://labuladong.github.io/algo/images/backtracking/7.jpg)
+![](https://labuladong.gitee.io/pictures/backtracking/7.jpg)
 */
                 continue;
             }
@@ -142,10 +142,13 @@ class Solution {
 
 **类似题目**：
   - [46. 全排列 🟠](/problems/permutations)
+  - [52. N皇后 II 🔴](/problems/n-queens-ii)
   - [剑指 Offer II 083. 没有重复元素集合的全排列 🟠](/problems/VvJkup)
 
 </details>
 </div>
+
+
 
 
 

@@ -101,14 +101,6 @@ public class P51_NQueens {
             return res;
         }
 
-
-
-
-
-
-
-
-
         /*public List<List<String>> solveNQueens(int n) {
             List<List<String>> res = new LinkedList<>();
             LinkedList<Integer> queue = new LinkedList<>();
