@@ -54,6 +54,62 @@ public class P51_NQueens {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<List<String>> solveNQueens(int n) {
+            LinkedList<Integer> trace = new LinkedList<>();
+            Set<Integer> left = new HashSet<>(2 * n - 1);
+            Set<Integer> right = new HashSet<>(2 * n - 1);
+            boolean[] col = new boolean[n];
+            List<List<String>> res = new ArrayList<>();
+
+            backTrack(0, n, trace, left, right, col, res);
+
+            return res;
+        }
+
+        private void backTrack(int row, int maxRow, LinkedList<Integer> trace, Set<Integer> left, Set<Integer> right, boolean[] col, List<List<String>> res) {
+            if (row == maxRow) {
+                res.add(buildBoard(trace));
+                return;
+            }
+            for (int i = 0; i < maxRow; i++) {
+                int leftIndex = row + i;
+                int rightIndex = row - i;
+                if (!left.contains(leftIndex) && !right.contains(rightIndex) && !col[i]) {
+                    left.add(leftIndex);
+                    right.add(rightIndex);
+                    col[i] = true;
+                    trace.add(i);
+
+                    backTrack(row + 1, maxRow, trace, left, right, col, res);
+
+                    left.remove(leftIndex);
+                    right.remove(rightIndex);
+                    col[i] = false;
+                    trace.removeLast();
+                }
+            }
+        }
+
+        private List<String> buildBoard(LinkedList<Integer> trace) {
+            List<String> res = new ArrayList<>(trace.size());
+
+            for (int row : trace) {
+                char[] chars = new char[trace.size()];
+                Arrays.fill(chars, '.');
+                chars[row] = 'Q';
+                res.add(new String(chars));
+            }
+            return res;
+        }
+
+
+
+
+
+
+
+
+
+        /*public List<List<String>> solveNQueens(int n) {
             List<List<String>> res = new LinkedList<>();
             LinkedList<Integer> queue = new LinkedList<>();
             Set<Integer> leftDia = new HashSet<>(2 * n - 1);
@@ -100,7 +156,7 @@ public class P51_NQueens {
                 res.add(new String(row));
             }
             return res;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
