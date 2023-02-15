@@ -41,7 +41,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，第 17 期刷题打卡 [开始报名](https://aep.xet.tech/s/2jPp5X)。**
 
 
 
@@ -94,7 +94,7 @@ class Solution {
             int subProblem = dp(coins, amount - coin);/**<extend up -200>
 
 
-           ![](https://labuladong.github.io/algo/images/动态规划详解进阶/5.jpg)
+           ![](https://labuladong.gitee.io/pictures/动态规划详解进阶/5.jpg)
 */
             // 子问题无解则跳过
             if (subProblem == -1) continue;
@@ -114,6 +114,10 @@ class Solution {
 
 </details>
 </div>
+
+
+
+
 
 
 
