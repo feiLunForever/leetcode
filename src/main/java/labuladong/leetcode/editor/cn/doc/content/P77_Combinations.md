@@ -38,7 +38,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，第 17 期刷题打卡 [开始报名](https://aep.xet.tech/s/2jPp5X)。**
 
 
 
@@ -53,7 +53,7 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 这也是典型的回溯算法，`k` 限制了树的高度，`n` 限制了树的宽度，继续套我们以前讲过的 [回溯算法模板框架](https://labuladong.github.io/article/fname.html?fname=回溯算法详解修订版) 就行了：
 
-![](https://labuladong.github.io/algo/images/子集/2.jpg)
+![](https://labuladong.gitee.io/pictures/子集/2.jpg)
 
 **详细题解：[回溯算法秒杀所有排列/组合/子集问题](https://labuladong.github.io/article/fname.html?fname=子集排列组合)**
 
@@ -108,6 +108,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 

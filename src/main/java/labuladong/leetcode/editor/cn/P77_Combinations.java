@@ -42,6 +42,7 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -60,7 +61,29 @@ public class P77_Combinations {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public List<List<Integer>> combine(int n, int k) {
+            LinkedList<Integer> trace = new LinkedList<>();
+            List<List<Integer>> res = new ArrayList<>();
+            backtrack(1, n, k, trace, res);
+            return res;
+        }
+
+        private void backtrack(int start, int n, int k, LinkedList<Integer> trace, List<List<Integer>> res) {
+            // base case
+            if (trace.size() == k) {
+                res.add(new ArrayList<>(trace));
+                return;
+            }
+
+            for (int i = start; i <= n; i++) {
+                trace.add(i); // choice
+                backtrack(i + 1, n, k, trace, res);
+                trace.removeLast(); // backTrace
+            }
+        }
+
+        /*public List<List<Integer>> combine(int n, int k) {
             LinkedList<Integer> queue = new LinkedList<>();
             List<List<Integer>> res = new LinkedList<>();
 
@@ -80,7 +103,7 @@ public class P77_Combinations {
                 backTrack(i + 1, n, k, queue, res);
                 queue.removeLast();
             }
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
