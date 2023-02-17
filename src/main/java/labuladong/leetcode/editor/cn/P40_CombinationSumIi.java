@@ -47,6 +47,7 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -66,7 +67,30 @@ public class P40_CombinationSumIi {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+            LinkedList<Integer> trace = new LinkedList<>();
+            List<List<Integer>> res = new ArrayList<>();
+            Arrays.sort(candidates);
+            backTrack(candidates, 0, target, trace, res);
+            return res;
+        }
+
+        private void backTrack(int[] candidates, int start, int target, LinkedList<Integer> trace, List<List<Integer>> res) {
+            if (target == 0) {
+                res.add(new ArrayList<>(trace));
+                return;
+            }
+            if (target < 0) return;
+            for (int i = start; i < candidates.length; i++) {
+                if (i > start && candidates[i] == candidates[i - 1]) continue;
+                trace.add(candidates[i]);
+                backTrack(candidates, i + 1, target - candidates[i], trace, res);
+                trace.removeLast();
+            }
+        }
+
+        /*public List<List<Integer>> combinationSum2(int[] candidates, int target) {
             List<List<Integer>> res = new LinkedList<>();
             LinkedList<Integer> queue = new LinkedList<>();
             Arrays.sort(candidates);
@@ -88,7 +112,7 @@ public class P40_CombinationSumIi {
                 backTrack(candidates, i + 1, target - candidates[i], queue, res);
                 queue.removeLast();
             }
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
