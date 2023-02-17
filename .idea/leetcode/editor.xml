@@ -58,6 +58,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P90_SubsetsIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P90_SubsetsIi.md" />
+              <option name="frontendQuestionId" value="leetcode.cn90" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P90_SubsetsIi.java" />
+              <option name="titleSlug" value="subsets-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

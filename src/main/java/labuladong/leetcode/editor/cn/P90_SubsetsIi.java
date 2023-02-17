@@ -27,6 +27,7 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -47,6 +48,26 @@ public class P90_SubsetsIi {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<List<Integer>> subsetsWithDup(int[] nums) {
+            Arrays.sort(nums);
+            LinkedList<Integer> trace = new LinkedList<>();
+            List<List<Integer>> res = new ArrayList<>();
+            backTrack(nums, 0, trace, res);
+            return res;
+        }
+
+        private void backTrack(int[] nums, int start, LinkedList<Integer> trace, List<List<Integer>> res) {
+            res.add(new ArrayList<>(trace));
+
+            for (int i = start; i < nums.length; i++) {
+                if (i > start && nums[i] == nums[i - 1]) continue;
+                trace.add(nums[i]);
+                backTrack(nums, i + 1, trace, res);
+                trace.removeLast();
+            }
+        }
+
+
+        /*public List<List<Integer>> subsetsWithDup(int[] nums) {
             List<List<Integer>> res = new LinkedList<>();
 
             LinkedList<Integer> queue = new LinkedList<>();
@@ -68,7 +89,7 @@ public class P90_SubsetsIi {
                 backTrack(nums, i + 1, queue, res);
                 queue.removeLast();
             }
-        }
+        }*/
 
 
     }
