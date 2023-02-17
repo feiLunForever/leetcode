@@ -35,6 +35,7 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -54,7 +55,33 @@ public class P47_PermutationsIi {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public List<List<Integer>> permuteUnique(int[] nums) {
+            LinkedList<Integer> trace = new LinkedList<>();
+            List<List<Integer>> res = new ArrayList<>();
+            boolean[] used = new boolean[nums.length];
+            Arrays.sort(nums);
+            backTrack(nums, trace, used, res);
+            return res;
+        }
+
+        private void backTrack(int[] nums, LinkedList<Integer> trace, boolean[] used, List<List<Integer>> res) {
+            if (trace.size() == nums.length) {
+                res.add(new ArrayList<>(trace));
+                return;
+            }
+            for (int i = 0; i < nums.length; i++) {
+                if (used[i]) continue;
+                if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;
+                trace.add(nums[i]);
+                used[i] = true;
+                backTrack(nums, trace, used, res);
+                trace.removeLast();
+                used[i] = false;
+            }
+        }
+
+        /*public List<List<Integer>> permuteUnique(int[] nums) {
             List<List<Integer>> res = new LinkedList<>();
             LinkedList<Integer> queue = new LinkedList<>();
             boolean[] used = new boolean[nums.length];
@@ -77,7 +104,7 @@ public class P47_PermutationsIi {
                 used[i] = false;
                 queue.removeLast();
             }
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
