@@ -49,6 +49,7 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -67,7 +68,29 @@ public class P39_CombinationSum {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public List<List<Integer>> combinationSum(int[] candidates, int target) {
+            LinkedList<Integer> trace = new LinkedList<>();
+            List<List<Integer>> res = new ArrayList<>();
+            backTrack(candidates, 0, target, trace, res);
+            return res;
+        }
+
+        private void backTrack(int[] candidates, int start, int target, LinkedList<Integer> trace, List<List<Integer>> res) {
+            if (target == 0) {
+                res.add(new ArrayList<>(trace));
+                return;
+            }
+            if (target < 0) return;
+            for (int i = start; i < candidates.length; i++) {
+                trace.add(candidates[i]);
+                backTrack(candidates, i, target - candidates[i], trace, res);
+                trace.removeLast();
+            }
+        }
+
+
+        /*public List<List<Integer>> combinationSum(int[] candidates, int target) {
             List<List<Integer>> res = new LinkedList<>();
             LinkedList<Integer> queue = new LinkedList<>();
             backTrack(candidates, 0, target, queue, res);
@@ -86,7 +109,7 @@ public class P39_CombinationSum {
                 backTrack(candidates, i, target - candidates[i], queue, res);
                 queue.removeLast();
             }
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
