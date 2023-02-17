@@ -31,7 +31,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，第 17 期刷题打卡 [开始报名](https://aep.xet.tech/s/2jPp5X)。**
 
 
 
@@ -48,7 +48,7 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 本质上子集问题就是遍历这样用一棵回溯树：
 
-![](https://labuladong.github.io/algo/images/子集/1.jpg)
+![](https://labuladong.gitee.io/pictures/子集/1.jpg)
 
 **详细题解：[回溯算法秒杀所有排列/组合/子集问题](https://labuladong.github.io/article/fname.html?fname=子集排列组合)**
 
@@ -98,6 +98,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 

@@ -35,6 +35,7 @@
 
 package labuladong.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,6 +55,23 @@ public class P78_Subsets {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<List<Integer>> subsets(int[] nums) {
+            LinkedList<Integer> trace = new LinkedList<>();
+            List<List<Integer>> rs = new LinkedList<>();
+            backTrack(nums, 0, trace, rs);
+            return rs;
+        }
+
+        private void backTrack(int[] nums, int start, LinkedList<Integer> trace, List<List<Integer>> rs) {
+            rs.add(new ArrayList<>(trace)); // 前序位置，每个节点的值都是一个子集
+
+            for (int i = start; i < nums.length; i++) {
+                trace.add(nums[i]);
+                backTrack(nums, i + 1, trace, rs);
+                trace.removeLast();
+            }
+        }
+
+        /*public List<List<Integer>> subsets(int[] nums) {
             LinkedList<Integer> queue = new LinkedList<>();
             List<List<Integer>> res = new LinkedList<>();
 
@@ -74,7 +92,7 @@ public class P78_Subsets {
                 queue.removeLast();
             }
 
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
