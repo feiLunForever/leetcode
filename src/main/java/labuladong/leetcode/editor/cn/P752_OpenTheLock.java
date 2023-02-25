@@ -76,6 +76,65 @@ public class P752_OpenTheLock {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int openLock(String[] deadends, String target) {
+            Queue<String> q = new LinkedList<>();
+            Set<String> dead = new HashSet<>(Arrays.asList(deadends));
+            Set<String> visited = new HashSet<>();
+            q.offer("0000");
+            visited.add("0000");
+            return bfs(target, q, dead, visited);
+        }
+
+        private int bfs(String target, Queue<String> q, Set<String> dead, Set<String> visited) {
+            int depth = 0;
+            while (!q.isEmpty()) {
+                int sz = q.size();
+                for (int i = 0; i < sz; i++) {
+                    String cur = q.poll();
+                    if (dead.contains(cur)) {
+                        continue;
+                    }
+                    if (target.equals(cur)) {
+                        return depth;
+                    }
+                    for (int j = 0; j < 4; j++) {
+                        String up = plus(cur, j);
+                        if (!visited.contains(up)) {
+                            q.offer(up);
+                            visited.add(up);
+                        }
+                        String down = minus(cur, j);
+                        if (!visited.contains(down)) {
+                            q.offer(down);
+                            visited.add(down);
+                        }
+                    }
+                }
+                ++depth;
+            }
+            return -1;
+        }
+
+        private String plus(String cur, int j) {
+            char[] chars = cur.toCharArray();
+            if (chars[j] == '9') {
+                chars[j] = '0';
+            } else {
+                chars[j] += 1;
+            }
+            return new String(chars);
+        }
+
+        private String minus(String cur, int j) {
+            char[] chars = cur.toCharArray();
+            if (chars[j] == '0') {
+                chars[j] = '9';
+            } else {
+                chars[j] -= 1;
+            }
+            return new String(chars);
+        }
+
+        /*public int openLock(String[] deadends, String target) {
             Set<String> visited = new HashSet<>();
             Set<String> deads = new HashSet<>(Arrays.asList(deadends));
             LinkedList<String> queue = new LinkedList<>();
@@ -132,7 +191,7 @@ public class P752_OpenTheLock {
                 chars[j] -= 1;
             }
             return new String(chars);
-        }
+        }*/
 
         int openLock1(String[] deadends, String target) {
             // 记录需要跳过的死亡密码

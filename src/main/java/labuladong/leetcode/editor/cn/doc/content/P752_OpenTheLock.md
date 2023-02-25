@@ -50,7 +50,7 @@ because the wheels of the lock become stuck after the display becomes the dead e
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，[第 17 期刷题打卡挑战](https://aep.xet.tech/s/2jPp5X) 下周开始，报名从速！**
 
 
 
@@ -150,6 +150,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 
