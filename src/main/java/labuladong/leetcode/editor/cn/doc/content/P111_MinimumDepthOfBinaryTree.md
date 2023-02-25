@@ -32,7 +32,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.7](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；B 站可查看 [核心算法框架系列视频](https://space.bilibili.com/14089380/channel/series)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，[第 17 期刷题打卡挑战](https://aep.xet.tech/s/2jPp5X) 下周开始，报名从速！**
 
 
 
@@ -66,7 +66,7 @@ class Solution {
 
         while (!q.isEmpty()) {/**<extend down -200>
 
-![](https://labuladong.github.io/algo/images/dijkstra/1.jpeg)
+![](https://labuladong.gitee.io/pictures/dijkstra/1.jpeg)
 */
             int sz = q.size();
             /* 遍历当前层的节点 */
@@ -90,11 +90,14 @@ class Solution {
 ```
 
 **类似题目**：
+  - [542. 01 矩阵 🟠](/problems/01-matrix)
   - [752. 打开转盘锁 🟠](/problems/open-the-lock)
   - [剑指 Offer II 109. 开密码锁 🟠](/problems/zlDJc7)
 
 </details>
 </div>
+
+
 
 
 
