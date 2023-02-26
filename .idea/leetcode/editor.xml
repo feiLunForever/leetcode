@@ -113,6 +113,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P714_BestTimeToBuyAndSellStockWithTransactionFee.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/P714_BestTimeToBuyAndSellStockWithTransactionFee.md" />
+              <option name="frontendQuestionId" value="leetcode.cn714" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P714_BestTimeToBuyAndSellStockWithTransactionFee.java" />
+              <option name="titleSlug" value="best-time-to-buy-and-sell-stock-with-transaction-fee" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/P752_OpenTheLock.java">
           <value>
             <LeetcodeEditor>
