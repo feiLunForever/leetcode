@@ -65,6 +65,41 @@ public class P122_BestTimeToBuyAndSellStockIi {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maxProfit(int[] prices) {
+            int n = prices.length;
+            int dp0_0 = 0;
+            int dp0_1 = -prices[0];
+            for (int i = 1; i < n; i++) {
+                dp0_0 = Math.max(dp0_0, dp0_1 + prices[i]); // 当前没有持有 = Math.max(昨天也没有持有, 昨天持有但是今天卖了)
+                dp0_1 = Math.max(dp0_1, dp0_0 - prices[i]); // 当前持有 = Math.max(昨天也持有, 昨天没有持有但是今天买了)
+            }
+            return dp0_0;
+        }
+
+        public int maxProfit1(int[] prices) {
+            int n = prices.length;
+            int[][] dp = new int[n][2];
+            dp[0][0] = 0;
+            dp[0][1] = -prices[0];
+            for (int i = 1; i < n; i++) {
+                dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]); // 当前没有持有 = Math.max(昨天也没有持有, 昨天持有但是今天卖了)
+                dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]); // 当前持有 = Math.max(昨天也持有, 昨天没有持有但是今天买了)
+            }
+            return dp[n - 1][0];
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*public int maxProfit(int[] prices) {
             int[][] dp = new int[prices.length][2];
             dp[0][0] = 0;
             dp[0][1] = -prices[0];
@@ -73,7 +108,7 @@ public class P122_BestTimeToBuyAndSellStockIi {
                 dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
             }
             return dp[prices.length - 1][0];
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
