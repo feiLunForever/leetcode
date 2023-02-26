@@ -63,6 +63,23 @@ public class P123_BestTimeToBuyAndSellStockIii {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maxProfit(int[] prices) {
+            int n = prices.length;
+            int[][][] dp = new int[n][3][2]; // 第i天，最大交易限制次数，是否持有
+            dp[0][2][0] = 0;
+            dp[0][2][1] = -prices[0];
+            dp[0][1][1] = -prices[0];
+            dp[0][1][0] = 0;
+            for (int i = 1; i < n; i++) {
+                for (int j = 2; j >= 1; j--) {
+                    dp[i][j][0] = Math.max(dp[i - 1][j][0], dp[i - 1][j][1] + prices[i]); // 今天没有持有 = Math.max(昨天也没有持有, 昨天持有但今天卖了)
+                    dp[i][j][1] = Math.max(dp[i - 1][j][1], dp[i - 1][j - 1][0] - prices[i]); // 今天持有 = Math.max(昨天也持有, 昨天持有但今天买了)
+                }
+            }
+            return dp[n-1][2][0];
+        }
+
+        
+        /*public int maxProfit(int[] prices) {
             int[][][] dp = new int[prices.length][3][2];
 //            dp[i][k][0] = Math.max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i]);
 //            dp[i][k][1] = Math.max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i]);
@@ -78,7 +95,7 @@ public class P123_BestTimeToBuyAndSellStockIii {
                 }
             }
             return dp[prices.length - 1][2][0];
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
