@@ -58,6 +58,21 @@ public class P309_BestTimeToBuyAndSellStockWithCooldown {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maxProfit(int[] prices) {
+            if (prices.length == 1) return 0;
+            int n = prices.length;
+            int[][] dp = new int[n][2];
+            dp[0][0] = 0;
+            dp[0][1] = -prices[0];
+            dp[1][0] = Math.max(0, prices[1] - prices[0]);
+            dp[1][1] = Math.max(-prices[0], -prices[1]); // 要么昨天持有，要么今天持有
+            for (int i = 2; i < n; i++) {
+                dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]); // 今天没有持有 = Math.max(昨天也没有持有, 昨天持有但今天卖了);
+                dp[i][1] = Math.max(dp[i - 1][1], dp[i - 2][0] - prices[i]); // 今天持有 = Math.max(昨天也持有, 前天没持有但今天买了（冷冻期一天）);
+            }
+            return dp[n - 1][0];
+        }
+
+        /*public int maxProfit(int[] prices) {
             // dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
             // dp[i][1] = Math.max(dp[i - 1][1], dp[i - 2][0] - prices[i]);
             if (prices.length == 1) return 0;
@@ -72,7 +87,7 @@ public class P309_BestTimeToBuyAndSellStockWithCooldown {
                 dp[i][1] = Math.max(dp[i - 1][1], dp[i - 2][0] - prices[i]);
             }
             return dp[prices.length - 1][0];
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
