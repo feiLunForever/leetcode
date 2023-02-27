@@ -54,6 +54,15 @@ public class P198_HouseRobber {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int rob(int[] nums) {
+            int n = nums.length;
+            int[] dp = new int[n + 2]; // dp[i] = x,从第i间房开始抢，最多x钱
+            for (int i = n - 1; i >= 0; i--) {
+                dp[i] = Math.max(dp[i + 1], dp[i + 2] + nums[i]);
+            }
+            return dp[0];
+        }
+
+        /*public int rob(int[] nums) {
             int[] dp = new int[nums.length + 2]; // dp[i] = x,从第i间房开始抢，最多x钱
 
             for (int i = nums.length - 1; i >= 0; i--) {
@@ -62,7 +71,7 @@ public class P198_HouseRobber {
                 dp[i] = Math.max(dp[i + 1], dp[i + 2] + nums[i]);
             }
             return dp[0];
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

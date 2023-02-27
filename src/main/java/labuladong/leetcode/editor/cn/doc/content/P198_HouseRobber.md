@@ -34,7 +34,7 @@ Total amount you can rob = 2 + 9 + 1 = 12.
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.8](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；第十期刷题打卡挑战 [开始报名](https://mp.weixin.qq.com/s/eUG2OOzY3k_ZTz-CFvtv5Q)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，[第 17 期刷题打卡挑战](https://aep.xet.tech/s/2jPp5X) 最后一天报名！**
 
 
 
@@ -51,7 +51,7 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 以上已经明确了「状态」和「选择」：**你面前房子的索引就是状态，抢和不抢就是选择**。
 
-![](https://labuladong.github.io/algo/images/robber/1.jpg)
+![](https://labuladong.gitee.io/pictures/robber/1.jpg)
 
 状态转移方程：
 
@@ -110,6 +110,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 
