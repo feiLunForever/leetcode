@@ -45,7 +45,7 @@ Notice that the order of the output and the order of the triplets does not matte
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.8](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；第十期刷题打卡挑战 [开始报名](https://mp.weixin.qq.com/s/eUG2OOzY3k_ZTz-CFvtv5Q)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，[第 17 期刷题打卡挑战](https://aep.xet.tech/s/2jPp5X) 最后一天报名！**
 
 
 
@@ -62,7 +62,7 @@ nSum 系列问题的核心思路就是**排序 + 双指针**。
 
 如果你想让它俩的和大一些，就让 `lo++`，如果你想让它俩的和小一些，就让 `hi--`。
 
-![](https://labuladong.github.io/algo/images/nSum/1.jpeg)
+![](https://labuladong.gitee.io/pictures/nSum/1.jpeg)
 
 基于两数之和可以得到一个万能函数 `nSumTarget`，扩展出 n 数之和的解法，具体分析见详细题解。
 
@@ -127,12 +127,14 @@ class Solution {
 
 **类似题目**：
   - [1. 两数之和 🟢](/problems/two-sum)
-  - [167. 两数之和 II - 输入有序数组 🟢](/problems/two-sum-ii-input-array-is-sorted)
+  - [167. 两数之和 II - 输入有序数组 🟠](/problems/two-sum-ii-input-array-is-sorted)
   - [18. 四数之和 🟠](/problems/4sum)
   - [剑指 Offer II 007. 数组中和为 0 的三个数 🟠](/problems/1fGaJU)
 
 </details>
 </div>
+
+
 
 
 
