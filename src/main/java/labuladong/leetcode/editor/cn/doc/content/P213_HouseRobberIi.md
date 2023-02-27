@@ -40,7 +40,7 @@ Total amount you can rob = 1 + 3 = 4.
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.8](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；第十期刷题打卡挑战 [开始报名](https://mp.weixin.qq.com/s/eUG2OOzY3k_ZTz-CFvtv5Q)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，[第 17 期刷题打卡挑战](https://aep.xet.tech/s/2jPp5X) 最后一天报名！**
 
 
 
@@ -53,7 +53,7 @@ PS：这道题在[《算法小抄》](https://mp.weixin.qq.com/s/tUSovvogbR9StkP
 
 首先，首尾房间不能同时被抢，那么只可能有三种不同情况：要么都不被抢；要么第一间房子被抢最后一间不抢；要么最后一间房子被抢第一间不抢。
 
-![](https://labuladong.github.io/algo/images/robber/3.jpg)
+![](https://labuladong.gitee.io/pictures/robber/3.jpg)
 
 这三种情况哪个结果最大，就是最终答案。其实，情况一的结果肯定最小，我们只要比较情况二和情况三就行了，**因为这两种情况对于房子的选择余地比情况一大，房子里的钱数都是非负数，所以选择余地大，最优决策结果肯定不会小**。
 
@@ -112,6 +112,8 @@ class Solution {
 
 </details>
 </div>
+
+
 
 
 

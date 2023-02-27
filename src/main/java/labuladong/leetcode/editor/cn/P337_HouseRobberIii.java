@@ -72,6 +72,21 @@ public class P337_HouseRobberIii {
      */
     class Solution {
         public int rob(TreeNode root) {
+            int[] res = dp(root); // res[0]代表不抢root, res[1]代表抢root
+            return Math.max(res[0], res[1]);
+        }
+
+        private int[] dp(TreeNode root) {
+            if (root == null) return new int[]{0, 0};
+            // 后序遍历，拿到左右子树的结果
+            int[] left = dp(root.left);
+            int[] right = dp(root.right);
+            int noRob = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+            int rob = root.val + left[0] + right[0]; // 抢root，左右子树就不能抢了
+            return new int[]{noRob, rob};
+        }
+
+        /*public int rob(TreeNode root) {
             int[] res = dp(root); // res[0] 不抢root，res[1] 抢root
             return Math.max(res[0], res[1]);
         }
@@ -85,7 +100,7 @@ public class P337_HouseRobberIii {
             // 这把抢
             int rot = root.val + left[0] + right[0];
             return new int[]{noRot, rot};
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
