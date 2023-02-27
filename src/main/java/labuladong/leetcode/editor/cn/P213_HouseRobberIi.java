@@ -59,7 +59,23 @@ public class P213_HouseRobberIi {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public int rob(int[] nums) {
+            if (nums.length == 1) return nums[0];
+            return Math.max(dp(nums, 0, nums.length - 2), dp(nums, 1, nums.length - 1));
+        }
+
+        private int dp(int[] nums, int start, int end) {
+            int n = nums.length;
+            int[] dp = new int[n + 2];
+
+            for (int i = end; i >= start; i--) {
+                dp[i] = Math.max(dp[i + 1], dp[i + 2] + nums[i]);
+            }
+            return dp[start];
+        }
+
+        /*public int rob(int[] nums) {
             if (nums.length == 1) return nums[0];
             return Math.max(dp(nums, 0, nums.length - 2), dp(nums, 1, nums.length - 1));
         }
@@ -71,7 +87,7 @@ public class P213_HouseRobberIi {
                 dp[i] = Math.max(dp[i + 1], dp[i + 2] + nums[i]);
             }
             return dp[start];
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
