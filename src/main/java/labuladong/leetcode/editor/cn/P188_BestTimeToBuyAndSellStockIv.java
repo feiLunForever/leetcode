@@ -55,7 +55,24 @@ public class P188_BestTimeToBuyAndSellStockIv {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public int maxProfit(int k, int[] prices) {
+            int n = prices.length;
+            int[][][] dp = new int[n][k + 1][2];
+            for (int i = k; i >= 1; i--) {
+                dp[0][i][0] = 0;
+                dp[0][i][1] = -prices[0];
+            }
+            for (int i = 1; i < n; i++) {
+                for (int j = k; j >= 1; j--) {
+                    dp[i][j][0] = Math.max(dp[i - 1][j][0], dp[i - 1][j][1] + prices[i]);
+                    dp[i][j][1] = Math.max(dp[i - 1][j][1], dp[i - 1][j - 1][0] - prices[i]);
+                }
+            }
+            return dp[n - 1][k][0];
+        }
+
+        /*public int maxProfit(int k, int[] prices) {
             if (prices.length == 0) return 0;
             int[][][] dp = new int[prices.length][k + 1][2];
 //            dp[i][m][0] = Math.max(dp[i - 1][m][0], dp[i - 1][m][1] + prices[i]);
@@ -71,7 +88,7 @@ public class P188_BestTimeToBuyAndSellStockIv {
                 }
             }
             return dp[prices.length - 1][k][0];
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
