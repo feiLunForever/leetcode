@@ -60,7 +60,7 @@ public class P206_ReverseLinkedList {
         ListNode last3 = new ListNode(2, last2);
         ListNode last4 = new ListNode(1, last3);
 
-        ListNode listNode = solution.reverseList(last4, 6);
+        ListNode listNode = solution.reverseList(last4,3);
         System.out.println();
     }
 
@@ -78,7 +78,34 @@ public class P206_ReverseLinkedList {
      * }
      */
     class Solution {
-        ListNode successor;
+
+        public ListNode reverseList(ListNode head, int n) {
+            ListNode pre = null, cur = head;
+            while (cur != null && n-- > 0) {
+                ListNode temp = cur.next;
+                cur.next = pre;
+                pre = cur;
+                cur = temp;
+            }
+            return pre;
+        }
+
+        public ListNode reverseList(ListNode head) {
+            ListNode pre = null, cur = head;
+            while (cur != null) {
+                ListNode temp = cur.next;
+                cur.next = pre;
+                pre = cur;
+                cur = temp;
+            }
+            return pre;
+        }
+
+
+
+
+
+        /*ListNode successor;
         public ListNode reverseList(ListNode head) {
             if (head == null || head.next == null) return head;
             ListNode last = reverseList(head.next);
@@ -97,7 +124,7 @@ public class P206_ReverseLinkedList {
             head.next.next = head;
             head.next = successor;
             return last;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

@@ -38,7 +38,7 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课 V1.8](https://aep.h5.xeknow.com/s/1XJHEO) 持续更新中；第十期刷题打卡挑战 [开始报名](https://mp.weixin.qq.com/s/eUG2OOzY3k_ZTz-CFvtv5Q)。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，[第 17 期刷题打卡挑战](https://aep.xet.tech/s/2jPp5X) 最后一天报名！**
 
 
 
@@ -55,7 +55,7 @@
 
 明白了函数的定义，再来看这个问题。比如说我们想反转这个链表：
 
-![](https://labuladong.github.io/algo/images/反转链表/1.jpg)
+![](https://labuladong.gitee.io/pictures/反转链表/1.jpg)
 
 那么输入 `reverse(head)` 后，会在这里进行递归：
 
@@ -65,11 +65,11 @@ ListNode last = reverse(head.next);
 
 不要跳进递归（你的脑袋能压几个栈呀？），而是要根据刚才的函数定义，来弄清楚这段代码会产生什么结果：
 
-![](https://labuladong.github.io/algo/images/反转链表/2.jpg)
+![](https://labuladong.gitee.io/pictures/反转链表/2.jpg)
 
 这个 `reverse(head.next)` 执行完成后，整个链表就成了这样：
 
-![](https://labuladong.github.io/algo/images/反转链表/3.jpg)
+![](https://labuladong.gitee.io/pictures/反转链表/3.jpg)
 
 并且根据函数定义，`reverse` 函数会返回反转之后的头结点，我们用变量 `last` 接收了。
 
@@ -79,7 +79,7 @@ ListNode last = reverse(head.next);
 head.next.next = head;
 ```
 
-![](https://labuladong.github.io/algo/images/反转链表/4.jpg)
+![](https://labuladong.gitee.io/pictures/反转链表/4.jpg)
 
 接下来：
 
@@ -88,7 +88,7 @@ head.next = null;
 return last;
 ```
 
-![](https://labuladong.github.io/algo/images/反转链表/5.jpg)
+![](https://labuladong.gitee.io/pictures/反转链表/5.jpg)
 
 神不神奇，这样整个链表就反转过来了！
 
@@ -111,6 +111,8 @@ return last;
 
 </details>
 </div>
+
+
 
 
 
