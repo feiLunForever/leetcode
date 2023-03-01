@@ -68,7 +68,31 @@ public class P25_ReverseNodesInKGroup {
      * }
      */
     class Solution {
+
         public ListNode reverseKGroup(ListNode head, int k) {
+            if (head == null) return null;
+            ListNode a = head, b = head;
+            for (int i = 0; i < k; i++) {
+                if (b == null) return head;
+                b = b.next;
+            }
+            ListNode newHead = reverse(a, b);
+            a.next = reverseKGroup(b, k);
+            return newHead;
+        }
+
+        private ListNode reverse(ListNode a, ListNode b) {
+            ListNode pre = null, cur = a;
+            while (cur != b) {
+                ListNode temp = cur.next;
+                cur.next = pre;
+                pre = cur;
+                cur = temp;
+            }
+            return pre;
+        }
+
+        /*public ListNode reverseKGroup(ListNode head, int k) {
             if (head == null) return null;
             ListNode a = head, b = head;
             for (int i = 0; i < k; i++) {
@@ -90,7 +114,7 @@ public class P25_ReverseNodesInKGroup {
                 cur = next;
             }
             return pre;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
