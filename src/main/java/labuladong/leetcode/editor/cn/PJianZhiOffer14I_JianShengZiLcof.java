@@ -26,7 +26,7 @@ public class PJianZhiOffer14I_JianShengZiLcof {
             int[] dp = new int[n + 1];
             dp[2] = 1;
             for (int i = 3; i <= n; i++) {
-                for (int j = 2; j < i; j++) {
+                for (int j = 2; j < (i >> 1) + 1; j++) { // 遍历一半就可以了
                     dp[i] = Math.max(dp[i], Math.max(dp[i - j] * j, (i - j) * j));
                 }
             }
