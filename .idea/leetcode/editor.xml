@@ -476,6 +476,39 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer33_ErChaSouSuoShuDeHouXuBianLiXuLieLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PJianZhiOffer33_ErChaSouSuoShuDeHouXuBianLiXuLieLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 33" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer33_ErChaSouSuoShuDeHouXuBianLiXuLieLcof.java" />
+              <option name="titleSlug" value="er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer34_ErChaShuZhongHeWeiMouYiZhiDeLuJingLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PJianZhiOffer34_ErChaShuZhongHeWeiMouYiZhiDeLuJingLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 34" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer34_ErChaShuZhongHeWeiMouYiZhiDeLuJingLcof.java" />
+              <option name="titleSlug" value="er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer35_FuZaLianBiaoDeFuZhiLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PJianZhiOffer35_FuZaLianBiaoDeFuZhiLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 35" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer35_FuZaLianBiaoDeFuZhiLcof.java" />
+              <option name="titleSlug" value="fu-za-lian-biao-de-fu-zhi-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo34_PalindromeLinkedList.java">
           <value>
             <LeetcodeEditor>
