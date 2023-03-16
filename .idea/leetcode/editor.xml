@@ -531,6 +531,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer38_ZiFuChuanDePaiLieLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PJianZhiOffer38_ZiFuChuanDePaiLieLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 38" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer38_ZiFuChuanDePaiLieLcof.java" />
+              <option name="titleSlug" value="zi-fu-chuan-de-pai-lie-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo34_PalindromeLinkedList.java">
           <value>
             <LeetcodeEditor>
