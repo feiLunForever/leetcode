@@ -597,6 +597,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer44_ShuZiXuLieZhongMouYiWeiDeShuZiLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PJianZhiOffer44_ShuZiXuLieZhongMouYiWeiDeShuZiLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 44" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer44_ShuZiXuLieZhongMouYiWeiDeShuZiLcof.java" />
+              <option name="titleSlug" value="shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo34_PalindromeLinkedList.java">
           <value>
             <LeetcodeEditor>
