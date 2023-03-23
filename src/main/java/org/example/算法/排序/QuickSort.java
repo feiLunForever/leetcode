@@ -1,4 +1,4 @@
-package org.example.算法;
+package org.example.算法.排序;
 
 import java.util.Arrays;
 
