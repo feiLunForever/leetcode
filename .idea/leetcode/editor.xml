@@ -696,6 +696,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/POne011_CapacityToShipPackagesWithinDDays.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/POne011_CapacityToShipPackagesWithinDDays.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1011" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/POne011_CapacityToShipPackagesWithinDDays.java" />
+              <option name="titleSlug" value="capacity-to-ship-packages-within-d-days" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo34_PalindromeLinkedList.java">
           <value>
             <LeetcodeEditor>
