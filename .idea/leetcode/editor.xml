@@ -718,6 +718,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer55II_PingHengErChaShuLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PJianZhiOffer55II_PingHengErChaShuLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 55 - II" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer55II_PingHengErChaShuLcof.java" />
+              <option name="titleSlug" value="ping-heng-er-cha-shu-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/POne011_CapacityToShipPackagesWithinDDays.java">
           <value>
             <LeetcodeEditor>
