@@ -729,6 +729,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer56II_ShuZuZhongShuZiChuXianDeCiShuIiLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PJianZhiOffer56II_ShuZuZhongShuZiChuXianDeCiShuIiLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 56 - II" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer56II_ShuZuZhongShuZiChuXianDeCiShuIiLcof.java" />
+              <option name="titleSlug" value="shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-ii-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PJianZhiOffer56I_ShuZuZhongShuZiChuXianDeCiShuLcof.java">
           <value>
             <LeetcodeEditor>
