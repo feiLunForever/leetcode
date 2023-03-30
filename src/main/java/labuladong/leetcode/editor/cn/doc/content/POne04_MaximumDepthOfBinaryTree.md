@@ -1,0 +1,336 @@
+<p>Given the <code>root</code> of a binary tree, return <em>its maximum depth</em>.</p>
+
+<p>A binary tree's <strong>maximum depth</strong>&nbsp;is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+
+<p>&nbsp;</p> 
+<p><strong class="example">Example 1:</strong></p> 
+<img alt="" src="https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg" style="width: 400px; height: 277px;" /> 
+<pre>
+<strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> 3
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> root = [1,null,2]
+<strong>Output:</strong> 2
+</pre>
+
+<p>&nbsp;</p> 
+<p><strong>Constraints:</strong></p>
+
+<ul> 
+ <li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li> 
+ <li><code>-100 &lt;= Node.val &lt;= 100</code></li> 
+</ul>
+
+<details><summary><strong>Related Topics</strong></summary>树 | 深度优先搜索 | 广度优先搜索 | 二叉树</details><br>
+
+<div>👍 1556, 👎 0<span style='float: right;'><span style='color: gray;'><a href='https://github.com/labuladong/fucking-algorithm/discussions/939' target='_blank' style='color: lightgray;text-decoration: underline;'>bug 反馈</a> | <a href='https://labuladong.gitee.io/article/fname.html?fname=jb插件简介' target='_blank' style='color: lightgray;text-decoration: underline;'>使用指南</a> | <a href='https://labuladong.github.io/algo/images/others/%E5%85%A8%E5%AE%B6%E6%A1%B6.jpg' target='_blank' style='color: lightgray;text-decoration: underline;'>更多配套插件</a></span></span></div>
+
+<div id="labuladong"><hr>
+
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。**
+
+
+
+<p><strong><a href="https://labuladong.github.io/article/slug.html?slug=maximum-depth-of-binary-tree" target="_blank">⭐️labuladong 题解</a></strong></p>
+<details><summary><strong>labuladong 思路</strong></summary>
+
+## 基本思路
+
+> 本文有视频版：[二叉树/递归的框架思维（纲领篇）](https://www.bilibili.com/video/BV1nG411x77H)
+
+[我的刷题经验总结](https://labuladong.github.io/article/fname.html?fname=算法心得) 说过，二叉树问题虽然简单，但是暗含了动态规划和回溯算法等高级算法的思想。
+
+下面提供两种思路的解法代码。
+
+**详细题解：[东哥带你刷二叉树（纲领篇）](https://labuladong.github.io/article/fname.html?fname=二叉树总结)**
+
+**标签：[二叉树](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=2121994699837177859)，[动态规划](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=1318881141113536512)，[回溯算法](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=2122002916411604996)**
+
+## 解法代码
+
+提示：🟢 标记的是我写的解法代码，🤖 标记的是 chatGPT 翻译的多语言解法代码。如有错误，可以 [点这里](https://github.com/labuladong/fucking-algorithm/issues/1113) 反馈和修正。
+
+<div class="tab-panel"><div class="tab-nav">
+<button data-tab-item="cpp" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">cpp🤖</button>
+
+<button data-tab-item="python" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">python🤖</button>
+
+<button data-tab-item="java" class="tab-nav-button btn active" data-tab-group="default" onclick="switchTab(this)">java🟢</button>
+
+<button data-tab-item="go" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">go🤖</button>
+
+<button data-tab-item="javascript" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">javascript🤖</button>
+</div><div class="tab-content">
+<div data-tab-item="cpp" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```cpp
+// 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+/***** 解法一，回溯算法思路 *****/
+class Solution {
+public:
+    int depth = 0;
+    int res = 0;
+
+    int maxDepth(TreeNode* root) {
+        traverse(root);
+        return res;
+    }
+
+    // 遍历二叉树
+    void traverse(TreeNode* root) {
+        if (root == nullptr) {
+            return;
+        }
+
+        // 前序遍历位置
+        depth++;
+        // 遍历的过程中记录最大深度
+        res = max(res, depth);
+        traverse(root->left);
+        traverse(root->right);
+        // 后序遍历位置
+        depth--;
+    }
+};
+
+/***** 解法二，动态规划思路 *****/
+class Solution2 {
+public:
+    // 定义：输入一个节点，返回以该节点为根的二叉树的最大深度
+    int maxDepth(TreeNode* root) {
+        if (root == nullptr) {
+            return 0;
+        }
+        int leftMax = maxDepth(root->left);
+        int rightMax = maxDepth(root->right);
+        // 根据左右子树的最大深度推出原二叉树的最大深度
+        return 1 + max(leftMax, rightMax);
+    }
+};
+```
+
+</div></div>
+
+<div data-tab-item="python" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```python
+# 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+# 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+# 解法一，回溯算法思路
+
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        self.res = 0
+        self.traverse(root, 0)
+        return self.res
+
+    # 遍历二叉树
+    def traverse(self, root: TreeNode, depth: int) -> None:
+        if not root:
+            return
+        # 前序遍历位置
+        depth += 1
+        # 遍历的过程中记录最大深度
+        self.res = max(self.res, depth)
+        self.traverse(root.left, depth)
+        self.traverse(root.right, depth)
+        # 后序遍历位置
+        depth -= 1
+
+
+# 解法二，动态规划思路
+
+class Solution:
+    # 定义：输入一个节点，返回以该节点为根的二叉树的最大深度
+    def maxDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+        leftMax = self.maxDepth(root.left)
+        rightMax = self.maxDepth(root.right)
+        # 根据左右子树的最大深度推出原二叉树的最大深度
+        return 1 + max(leftMax, rightMax)
+```
+
+</div></div>
+
+<div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
+
+```java
+/***** 解法一，回溯算法思路 *****/
+class Solution {
+
+    int depth = 0;
+    int res = 0;
+
+    public int maxDepth(TreeNode root) {
+        traverse(root);
+        return res;
+    }
+
+    // 遍历二叉树
+    void traverse(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        // 前序遍历位置
+        depth++;
+        // 遍历的过程中记录最大深度
+        res = Math.max(res, depth);
+        traverse(root.left);
+        traverse(root.right);
+        // 后序遍历位置
+        depth--;
+    }
+}
+
+/***** 解法二，动态规划思路 *****/
+class Solution2 {
+    // 定义：输入一个节点，返回以该节点为根的二叉树的最大深度
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftMax = maxDepth(root.left);
+        int rightMax = maxDepth(root.right);
+        // 根据左右子树的最大深度推出原二叉树的最大深度
+        return 1 + Math.max(leftMax, rightMax);
+    }
+}
+```
+
+</div></div>
+
+<div data-tab-item="go" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```go
+// 注意：go 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码还未经过力扣测试，仅供参考，如有疑惑，可以参照我写的 java 代码对比查看。
+
+/***** 解法一，回溯算法思路 *****/
+func maxDepth(root *TreeNode) int {
+    var depth int
+    var res int
+    traverse(root, &depth, &res)
+    return res
+}
+
+// 遍历二叉树
+func traverse(root *TreeNode, depth *int, res *int) {
+    if root == nil {
+        return
+    }
+    // 前序遍历位置
+    *depth++
+    // 遍历的过程中记录最大深度
+    *res = max(*res,*depth)
+    traverse(root.Left, depth, res)
+    traverse(root.Right, depth, res)
+    // 后序遍历位置
+    *depth--
+}
+
+/***** 解法二，动态规划思路 *****/
+func maxDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    leftMax := maxDepth(root.Left)
+    rightMax := maxDepth(root.Right)
+    // 根据左右子树的最大深度推出原二叉树的最大深度
+    return 1 + max(leftMax, rightMax)
+}
+
+func max(x, y int) int {
+    if x > y {
+        return x
+    }
+    return y
+}
+```
+
+</div></div>
+
+<div data-tab-item="javascript" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```javascript
+// 注意：javascript 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码还未经过力扣测试，仅供参考，如有疑惑，可以参照我写的 java 代码对比查看。
+
+/**
+ * 解法一，回溯算法思路
+ */
+var Solution = function() {
+  let depth = 0;
+  let res = 0;
+
+  function maxDepth(root) {
+    traverse(root);
+    return res;
+  }
+
+  // 遍历二叉树
+  function traverse(root) {
+    if (root === null) {
+      return;
+    }
+
+    // 前序遍历位置
+    depth++;
+    // 遍历的过程中记录最大深度
+    res = Math.max(res, depth);
+    traverse(root.left);
+    traverse(root.right);
+    // 后序遍历位置
+    depth--;
+  }
+
+  return {
+    maxDepth,
+  };
+};
+
+/**
+ * 解法二，动态规划思路
+ */
+var Solution2 = function() {
+  // 定义：输入一个节点，返回以该节点为根的二叉树的最大深度
+  function maxDepth(root) {
+    if (root === null) {
+      return 0;
+    }
+    const leftMax = maxDepth(root.left);
+    const rightMax = maxDepth(root.right);
+    // 根据左右子树的最大深度推出原二叉树的最大深度
+    return 1 + Math.max(leftMax, rightMax);
+  }
+
+  return {
+    maxDepth,
+  };
+};
+```
+
+</div></div>
+</div></div>
+
+**类似题目**：
+  - [1376. 通知所有员工所需的时间 🟠](/problems/time-needed-to-inform-all-employees)
+  - [144. 二叉树的前序遍历 🟢](/problems/binary-tree-preorder-traversal)
+  - [543. 二叉树的直径 🟢](/problems/diameter-of-binary-tree)
+  - [559. N 叉树的最大深度 🟢](/problems/maximum-depth-of-n-ary-tree)
+  - [865. 具有所有最深节点的最小子树 🟠](/problems/smallest-subtree-with-all-the-deepest-nodes)
+  - [剑指 Offer 55 - I. 二叉树的深度 🟢](/problems/er-cha-shu-de-shen-du-lcof)
+
+</details>
+</div>
+
+
+
