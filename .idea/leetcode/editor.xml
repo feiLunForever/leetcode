@@ -278,6 +278,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PEight89_ConstructBinaryTreeFromPreorderAndPostorderTraversal.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PEight89_ConstructBinaryTreeFromPreorderAndPostorderTraversal.md" />
+              <option name="frontendQuestionId" value="leetcode.cn889" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PEight89_ConstructBinaryTreeFromPreorderAndPostorderTraversal.java" />
+              <option name="titleSlug" value="construct-binary-tree-from-preorder-and-postorder-traversal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PFour10_SplitArrayLargestSum.java">
           <value>
             <LeetcodeEditor>
