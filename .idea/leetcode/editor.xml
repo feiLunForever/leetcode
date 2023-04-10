@@ -905,6 +905,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PMianShiTi45_BaShuZuPaiChengZuiXiaoDeShuLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PMianShiTi45_BaShuZuPaiChengZuiXiaoDeShuLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn面试题45" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PMianShiTi45_BaShuZuPaiChengZuiXiaoDeShuLcof.java" />
+              <option name="titleSlug" value="ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PMianShiTi59II_DuiLieDeZuiDaZhiLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PMianShiTi59II_DuiLieDeZuiDaZhiLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn面试题59 - II" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PMianShiTi59II_DuiLieDeZuiDaZhiLcof.java" />
+              <option name="titleSlug" value="dui-lie-de-zui-da-zhi-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/POne011_CapacityToShipPackagesWithinDDays.java">
           <value>
             <LeetcodeEditor>
