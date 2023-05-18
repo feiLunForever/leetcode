@@ -927,6 +927,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PMianShiTi61_BuKePaiZhongDeShunZiLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PMianShiTi61_BuKePaiZhongDeShunZiLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn面试题61" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PMianShiTi61_BuKePaiZhongDeShunZiLcof.java" />
+              <option name="titleSlug" value="bu-ke-pai-zhong-de-shun-zi-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/POne011_CapacityToShipPackagesWithinDDays.java">
           <value>
             <LeetcodeEditor>
@@ -1034,6 +1045,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo34_PalindromeLinkedList.java" />
               <option name="titleSlug" value="palindrome-linked-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo97_SerializeAndDeserializeBinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PTwo97_SerializeAndDeserializeBinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.cn297" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo97_SerializeAndDeserializeBinaryTree.java" />
+              <option name="titleSlug" value="serialize-and-deserialize-binary-tree" />
             </LeetcodeEditor>
           </value>
         </entry>
