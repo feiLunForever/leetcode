@@ -1180,6 +1180,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo36_LowestCommonAncestorOfABinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PTwo36_LowestCommonAncestorOfABinaryTree.md" />
+              <option name="frontendQuestionId" value="leetcode.cn236" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo36_LowestCommonAncestorOfABinaryTree.java" />
+              <option name="titleSlug" value="lowest-common-ancestor-of-a-binary-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo97_SerializeAndDeserializeBinaryTree.java">
           <value>
             <LeetcodeEditor>
