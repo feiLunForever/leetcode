@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71ce908-0c9e-4eff-af51-e5e076ca9bb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo07_CourseSchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PTwo07_CourseSchedule.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PTwo10_CourseScheduleIi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PTwo10_CourseScheduleIi.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/leetcode/statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/statistics.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -35,13 +35,15 @@
     <selection>jr</selection>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -58,7 +60,8 @@
       <workItem from="1685528899566" duration="148000" />
       <workItem from="1685529065107" duration="481000" />
       <workItem from="1685602774773" duration="1523000" />
-      <workItem from="1685696995961" duration="1233000" />
+      <workItem from="1685696995961" duration="1785000" />
+      <workItem from="1685930387531" duration="2458000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1685541743192</created>
@@ -67,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685541743192</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add">
+      <created>1685698549333</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685698549333</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
