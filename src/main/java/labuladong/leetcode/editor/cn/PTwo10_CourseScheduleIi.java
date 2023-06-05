@@ -53,6 +53,7 @@ package labuladong.leetcode.editor.cn;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Course Schedule II
@@ -70,44 +71,31 @@ public class PTwo10_CourseScheduleIi {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
-        private boolean[] used;
-
-        private boolean[] onPath;
-
-        boolean hasCycle;
-
-        List<Integer> postOrder = new LinkedList<>();
-
         public int[] findOrder(int numCourses, int[][] prerequisites) {
-            used = new boolean[numCourses];
-            onPath = new boolean[numCourses];
-
             List<Integer>[] graph = buildGraph(numCourses, prerequisites);
-
+            int[] inDegree = new int[numCourses];
+            for (int[] edge : prerequisites) {
+                ++inDegree[edge[0]];
+            }
+            Queue<Integer> q = new LinkedList<>();
             for (int i = 0; i < numCourses; i++) {
-                traverse(graph, i);
+                if (inDegree[i] == 0) {
+                    q.offer(i);
+                }
             }
-
-            if (hasCycle) return new int[]{};
-
-            int[] res = new int[postOrder.size()];
-            for (int i = 0; i < numCourses; i++) {
-                res[i] = postOrder.get(postOrder.size() - i - 1);
+            int index = 0;
+            int[] res = new int[numCourses];
+            while (!q.isEmpty()) {
+                Integer cur = q.poll();
+                res[index++] = cur;
+                for (int next : graph[cur]) {
+                    --inDegree[next];
+                    if (inDegree[next] == 0) {
+                        q.offer(next);
+                    }
+                }
             }
-
-            return res;
-        }
-
-        private void traverse(List<Integer>[] graph, int s) {
-            if (onPath[s]) hasCycle = true;
-            if (used[s] || hasCycle) return;
-            onPath[s] = true;
-            used[s] = true;
-            for (int t : graph[s]) {
-                traverse(graph, t);
-            }
-            postOrder.add(s);
-            onPath[s] = false;
+            return index != numCourses ? new int[]{} : res;
         }
 
         private List<Integer>[] buildGraph(int numCourses, int[][] prerequisites) {
@@ -120,6 +108,57 @@ public class PTwo10_CourseScheduleIi {
             }
             return graph;
         }
+
+        /**private boolean[] used;
+
+         private boolean[] onPath;
+
+         boolean hasCycle;
+
+         List<Integer> postOrder = new LinkedList<>();
+
+         public int[] findOrder(int numCourses, int[][] prerequisites) {
+         used = new boolean[numCourses];
+         onPath = new boolean[numCourses];
+
+         List<Integer>[] graph = buildGraph(numCourses, prerequisites);
+
+         for (int i = 0; i < numCourses; i++) {
+         traverse(graph, i);
+         }
+
+         if (hasCycle) return new int[]{};
+
+         int[] res = new int[postOrder.size()];
+         for (int i = 0; i < numCourses; i++) {
+         res[i] = postOrder.get(postOrder.size() - i - 1);
+         }
+
+         return res;
+         }
+
+         private void traverse(List<Integer>[] graph, int s) {
+         if (onPath[s]) hasCycle = true;
+         if (used[s] || hasCycle) return;
+         onPath[s] = true;
+         used[s] = true;
+         for (int t : graph[s]) {
+         traverse(graph, t);
+         }
+         postOrder.add(s);
+         onPath[s] = false;
+         }
+
+         private List<Integer>[] buildGraph(int numCourses, int[][] prerequisites) {
+         List<Integer>[] graph = new LinkedList[numCourses];
+         for (int i = 0; i < numCourses; i++) {
+         graph[i] = new LinkedList<>();
+         }
+         for (int[] edge : prerequisites) {
+         graph[edge[1]].add(edge[0]);
+         }
+         return graph;
+         }**/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
