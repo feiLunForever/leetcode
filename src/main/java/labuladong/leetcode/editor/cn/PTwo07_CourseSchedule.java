@@ -46,6 +46,7 @@ package labuladong.leetcode.editor.cn;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Course Schedule
@@ -63,50 +64,91 @@ public class PTwo07_CourseSchedule {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
-        private boolean[] visited;
-
-        private boolean[] onPath;
-
-        boolean hasCycle;
-
         public boolean canFinish(int numCourses, int[][] prerequisites) {
             List<Integer>[] graph = buildGraph(numCourses, prerequisites);
-            visited = new boolean[numCourses];
-            onPath = new boolean[numCourses];
+            int[] inDegree = new int[numCourses];
+            for (int[] edge : prerequisites) {
+                inDegree[edge[0]]++;
+            }
 
+            Queue<Integer> q = new LinkedList<>();
             for (int i = 0; i < numCourses; i++) {
-                traverse(graph, i);
+                if (inDegree[i] == 0) {
+                    q.offer(i);
+                }
             }
 
-            return !hasCycle;
-        }
-
-        private void traverse(List<Integer>[] graph, int s) {
-			if (onPath[s]) hasCycle = true;
-            if (visited[s] || hasCycle) return;
-
-            // 前序位置
-            visited[s] = true;
-            onPath[s] = true;
-            for (int t : graph[s]) {
-                traverse(graph, t);
+            int count = 0;
+            while (!q.isEmpty()) {
+                Integer cur = q.poll();
+                ++count;
+                for (int next : graph[cur]) {
+                    --inDegree[next];
+                    if (inDegree[next] == 0) {
+                        q.offer(next);
+                    }
+                }
             }
 
-            onPath[s] = false;
+            return count == numCourses;
         }
 
         private List<Integer>[] buildGraph(int numCourses, int[][] prerequisites) {
             List<Integer>[] graph = new LinkedList[numCourses];
-			for (int i = 0; i < numCourses; i++) {
-				graph[i] = new LinkedList<>();
-			}
+            for (int i = 0; i < numCourses; i++) {
+                graph[i] = new LinkedList<>();
+            }
             for (int[] edge : prerequisites) {
-                int from = edge[0];
-                int to = edge[1];
-                graph[from].add(to);
+                graph[edge[1]].add(edge[0]);
             }
             return graph;
         }
+
+        /** private boolean[] visited;
+
+         private boolean[] onPath;
+
+         boolean hasCycle;
+
+         public boolean canFinish(int numCourses, int[][] prerequisites) {
+         List<Integer>[] graph = buildGraph(numCourses, prerequisites);
+         visited = new boolean[numCourses];
+         onPath = new boolean[numCourses];
+
+         for (int i = 0; i < numCourses; i++) {
+         traverse(graph, i);
+         }
+
+         return !hasCycle;
+         }
+
+         private void traverse(List<Integer>[] graph, int s) {
+         if (onPath[s]) hasCycle = true;
+         if (visited[s] || hasCycle) return;
+
+         // 前序位置
+         visited[s] = true;
+         onPath[s] = true;
+         for (int t : graph[s]) {
+         traverse(graph, t);
+         }
+
+         onPath[s] = false;
+         }
+
+         private List<Integer>[] buildGraph(int numCourses, int[][] prerequisites) {
+         List<Integer>[] graph = new LinkedList[numCourses];
+         for (int i = 0; i < numCourses; i++) {
+         graph[i] = new LinkedList<>();
+         }
+         for (int[] edge : prerequisites) {
+         int from = edge[0];
+         int to = edge[1];
+         graph[from].add(to);
+         }
+         return graph;
+         }
+         **/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

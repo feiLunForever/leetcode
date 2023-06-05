@@ -390,7 +390,7 @@ var canFinish = function(numCourses, prerequisites) {
 </div></div>
 </div></div>
 
-<details open><summary><strong>🌟🌟 算法可视化 🌟🌟</strong></summary><div id="data_course-schedule" data="iwGAbnVsbAM="></div><div class="resizable aspect-ratio-container" style="height: 100%;">
+<details open><summary><strong>👾👾 算法可视化 👾👾</strong></summary><div id="data_course-schedule" data="iwGAbnVsbAM="></div><div class="resizable aspect-ratio-container" style="height: 100%;">
 <div id="iframe_course-schedule"></div></div>
 </details><hr /><br />
 
@@ -400,6 +400,8 @@ var canFinish = function(numCourses, prerequisites) {
 
 </details>
 </div>
+
+
 
 
 
