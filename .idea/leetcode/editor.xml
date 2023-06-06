@@ -3,6 +3,17 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PSeven85_IsGraphBipartite.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/doc/content/PSeven85_IsGraphBipartite.md" />
+              <option name="frontendQuestionId" value="leetcode.cn785" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PSeven85_IsGraphBipartite.java" />
+              <option name="titleSlug" value="is-graph-bipartite" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/labuladong/leetcode/editor/cn/PSeven97_AllPathsFromSourceToTarget.java">
           <value>
             <LeetcodeEditor>
