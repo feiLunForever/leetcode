@@ -42,15 +42,13 @@
     <selection>jr</selection>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -71,7 +69,8 @@
       <workItem from="1685930387531" duration="4213000" />
       <workItem from="1686035555385" duration="2641000" />
       <workItem from="1686127313733" duration="1698000" />
-      <workItem from="1686293736141" duration="1228000" />
+      <workItem from="1686293736141" duration="1755000" />
+      <workItem from="1686465402166" duration="268000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1685541743192</created>
@@ -129,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686129985514</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add">
+      <created>1686296406970</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686296406970</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
