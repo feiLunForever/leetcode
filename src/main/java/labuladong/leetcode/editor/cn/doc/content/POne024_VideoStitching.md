@@ -1,0 +1,322 @@
+<p>You are given a series of video clips from a sporting event that lasted <code>time</code> seconds. These video clips can be overlapping with each other and have varying lengths.</p>
+
+<p>Each video clip is described by an array <code>clips</code> where <code>clips[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> indicates that the ith clip started at <code>start<sub>i</sub></code> and ended at <code>end<sub>i</sub></code>.</p>
+
+<p>We can cut these clips into segments freely.</p>
+
+<ul> 
+ <li>For example, a clip <code>[0, 7]</code> can be cut into segments <code>[0, 1] + [1, 3] + [3, 7]</code>.</li> 
+</ul>
+
+<p>Return <em>the minimum number of clips needed so that we can cut the clips into segments that cover the entire sporting event</em> <code>[0, time]</code>. If the task is impossible, return <code>-1</code>.</p>
+
+<p>&nbsp;</p> 
+<p><strong class="example">Example 1:</strong></p>
+
+<pre>
+<strong>Input:</strong> clips = [[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]], time = 10
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> We take the clips [0,2], [8,10], [1,9]; a total of 3 clips.
+Then, we can reconstruct the sporting event as follows:
+We cut [1,9] into segments [1,2] + [2,8] + [8,9].
+Now we have segments [0,2] + [2,8] + [8,10] which cover the sporting event [0, 10].
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> clips = [[0,1],[1,2]], time = 5
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> We cannot cover [0,5] with only [0,1] and [1,2].
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre>
+<strong>Input:</strong> clips = [[0,1],[6,8],[0,2],[5,6],[0,4],[0,3],[6,7],[1,3],[4,7],[1,4],[2,5],[2,6],[3,4],[4,5],[5,7],[6,9]], time = 9
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> We can take clips [0,4], [4,7], and [6,9].
+</pre>
+
+<p>&nbsp;</p> 
+<p><strong>Constraints:</strong></p>
+
+<ul> 
+ <li><code>1 &lt;= clips.length &lt;= 100</code></li> 
+ <li><code>0 &lt;= start<sub>i</sub> &lt;= end<sub>i</sub> &lt;= 100</code></li> 
+ <li><code>1 &lt;= time &lt;= 100</code></li> 
+</ul>
+
+<details><summary><strong>Related Topics</strong></summary>贪心 | 数组 | 动态规划</details><br>
+
+<div>👍 334, 👎 0<span style='float: right;'><span style='color: gray;'><a href='https://github.com/labuladong/fucking-algorithm/discussions/939' target='_blank' style='color: lightgray;text-decoration: underline;'>bug 反馈</a> | <a href='https://labuladong.gitee.io/article/fname.html?fname=jb插件简介' target='_blank' style='color: lightgray;text-decoration: underline;'>使用指南</a> | <a href='https://labuladong.github.io/algo/images/others/%E5%85%A8%E5%AE%B6%E6%A1%B6.jpg' target='_blank' style='color: lightgray;text-decoration: underline;'>更多配套插件</a></span></span></div>
+
+<div id="labuladong"><hr>
+
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线，[第 20 期打卡挑战](https://opedk.xet.tech/s/1cEM6U) 开始报名。**
+
+
+
+<p><strong><a href="https://labuladong.gitee.io/article/slug.html?slug=video-stitching" target="_blank">⭐️labuladong 题解</a></strong></p>
+<details><summary><strong>labuladong 思路</strong></summary>
+
+## 基本思路
+
+我做这道题的思路是先按照起点升序排序，如果起点相同的话按照终点降序排序，主要考虑到这道题的以下两个特点：
+
+1、要用若干短视频凑出完成视频 `[0, T]`，至少得有一个短视频的起点是 0。
+
+2、如果有几个短视频的起点都相同，那么一定应该选择那个最长（终点最大）的视频。
+
+![](https://labuladong.github.io/pictures/剪视频/4.jpeg)
+
+排序之后，从第一个区间开始选，每当选中一个区间 `x`（图中红色的区间），我们会比较所有起点小于 `x.start` 的区间，根据贪心策略，它们中终点最大的那个区间就是下一个会被选中的区间，以此类推。
+
+**详细题解：[剪视频剪出一个贪心算法](https://labuladong.github.io/article/fname.html?fname=剪视频)**
+
+**标签：[区间问题](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=2122021012031569922)，排序，贪心算法**
+
+## 解法代码
+
+提示：🟢 标记的是我写的解法代码，🤖 标记的是 chatGPT 翻译的多语言解法代码。如有错误，可以 [点这里](https://github.com/labuladong/fucking-algorithm/issues/1113) 反馈和修正。
+
+<div class="tab-panel"><div class="tab-nav">
+<button data-tab-item="cpp" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">cpp🤖</button>
+
+<button data-tab-item="python" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">python🤖</button>
+
+<button data-tab-item="java" class="tab-nav-button btn active" data-tab-group="default" onclick="switchTab(this)">java🟢</button>
+
+<button data-tab-item="go" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">go🤖</button>
+
+<button data-tab-item="javascript" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">javascript🤖</button>
+</div><div class="tab-content">
+<div data-tab-item="cpp" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```cpp
+// 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+class Solution {
+public:
+    int videoStitching(vector<vector<int>>& clips, int T) {
+        if (T == 0) return 0;
+        //按起点升序排列，起点相同的降序排列
+        //PS：其实起点相同的不用降序排列也可以，不过我觉得这样更清晰
+        sort(clips.begin(), clips.end(), [](vector<int>& a, vector<int>& b){
+            if (a[0] == b[0]) {
+                return b[1] < a[1];
+            }
+            return a[0] < b[0];
+        });
+        //记录选择的短视频个数
+        int res = 0;
+
+        int curEnd = 0, nextEnd = 0;
+        int i = 0, n = clips.size();
+        while (i < n && clips[i][0] <= curEnd) {
+            //在第res个视频的区间内贪心选择下一个视频
+            while (i < n && clips[i][0] <= curEnd) {
+                nextEnd = max(nextEnd, clips[i][1]);
+                i++;
+            }
+            //找到下一个视频，更新curEnd
+            res++;
+            curEnd = nextEnd;
+            if (curEnd >= T) {
+                //已经可以拼出区间 [0, T]
+                return res;
+            }
+        }
+        //无法连续拼出区间 [0, T]
+        return -1;
+    }
+};
+```
+
+</div></div>
+
+<div data-tab-item="python" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```python
+# 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+# 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+class Solution:
+    def videoStitching(self, clips: List[List[int]], T: int) -> int:
+        if T == 0:
+            return 0
+        # 按起点升序排列，起点相同的降序排列
+        # PS：其实起点相同的不用降序排列也可以，不过我觉得这样更清晰
+        clips.sort(key=lambda x: (x[0], -x[1]))
+        # 记录选择的短视频个数
+        res = 0
+        curEnd, nextEnd = 0, 0
+        i, n = 0, len(clips)
+        while i < n and clips[i][0] <= curEnd:
+            # 在第 res 个视频的区间内贪心选择下一个视频
+            while i < n and clips[i][0] <= curEnd:
+                nextEnd = max(nextEnd, clips[i][1])
+                i += 1
+            # 找到下一个视频，更新 curEnd
+            res += 1
+            curEnd = nextEnd
+            if curEnd >= T:
+                # 已经可以拼出区间 [0, T]
+                return res
+        # 无法连续拼出区间 [0, T]
+        return -1
+```
+
+</div></div>
+
+<div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
+
+```java
+class Solution {
+    public int videoStitching(int[][] clips, int T) {
+        if (T == 0) return 0;
+        // 按起点升序排列，起点相同的降序排列
+        // PS：其实起点相同的不用降序排列也可以，不过我觉得这样更清晰
+        Arrays.sort(clips, (a, b) -> {
+            if (a[0] == b[0]) {
+                return b[1] - a[1];
+            }
+            return a[0] - b[0];
+        });
+        // 记录选择的短视频个数
+        int res = 0;
+
+        int curEnd = 0, nextEnd = 0;
+        int i = 0, n = clips.length;
+        while (i < n && clips[i][0] <= curEnd) {
+            // 在第 res 个视频的区间内贪心选择下一个视频
+            while (i < n && clips[i][0] <= curEnd) {
+                nextEnd = Math.max(nextEnd, clips[i][1]);
+                i++;
+            }
+            // 找到下一个视频，更新 curEnd
+            res++;
+            curEnd = nextEnd;
+            if (curEnd >= T) {
+                // 已经可以拼出区间 [0, T]
+                return res;
+            }
+        }
+        // 无法连续拼出区间 [0, T]
+        return -1;
+    }
+}
+```
+
+</div></div>
+
+<div data-tab-item="go" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```go
+// 注意：go 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+import "sort"
+
+func videoStitching(clips [][]int, T int) int {
+	if T == 0 {
+		return 0
+	}
+	// 按起点升序排列，起点相同的降序排列
+	// PS：其实起点相同的不用降序排列也可以，不过我觉得这样更清晰
+	sort.Slice(clips, func(i, j int) bool {
+		a, b := clips[i], clips[j]
+		if a[0] == b[0] {
+			return b[1] < a[1]
+		}
+		return a[0] < b[0]
+	})
+	// 记录选择的短视频个数
+	var res int
+
+	curEnd, nextEnd := 0, 0
+	i, n := 0, len(clips)
+	for i < n && clips[i][0] <= curEnd {
+		// 在第 res 个视频的区间内贪心选择下一个视频
+		for i < n && clips[i][0] <= curEnd {
+			nextEnd = max(nextEnd, clips[i][1])
+			i++
+		}
+		// 找到下一个视频，更新 curEnd
+		res++
+		curEnd = nextEnd
+		if curEnd >= T {
+			// 已经可以拼出区间 [0, T]
+			return res
+		}
+	}
+	// 无法连续拼出区间 [0, T]
+	return -1
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+</div></div>
+
+<div data-tab-item="javascript" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```javascript
+// 注意：javascript 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+var videoStitching = function(clips, T) {
+    if (T == 0) return 0;
+    // 按起点升序排列，起点相同的降序排列
+    // PS：其实起点相同的不用降序排列也可以，不过我觉得这样更清晰
+    clips.sort((a, b) => {
+        if (a[0] == b[0]) {
+            return b[1] - a[1];
+        }
+        return a[0] - b[0];
+    });
+    // 记录选择的短视频个数
+    var res = 0;
+
+    var curEnd = 0, nextEnd = 0;
+    var i = 0, n = clips.length;
+    while (i < n && clips[i][0] <= curEnd) {
+        // 在第 res 个视频的区间内贪心选择下一个视频
+        while (i < n && clips[i][0] <= curEnd) {
+            nextEnd = Math.max(nextEnd, clips[i][1]);
+            i++;
+        }
+        // 找到下一个视频，更新 curEnd
+        res++;
+        curEnd = nextEnd;
+        if (curEnd >= T) {
+            // 已经可以拼出区间 [0, T]
+            return res;
+        }
+    }
+    // 无法连续拼出区间 [0, T]
+    return -1;
+};
+```
+
+</div></div>
+</div></div>
+
+<details open><summary><strong>👉 算法可视化 👈</strong></summary><div class="resizable aspect-ratio-container" style="height: 70vh;">
+    <iframe src="https://labuladong.github.io/algo-visualize/" width="100%"
+    height="100%" scrolling="auto" frameborder="0"
+    style="overflow: auto;" id="iframe_video-stitching"></iframe>
+</div>
+<div id="data_video-stitching" data="iwGAbnVsbAM="></div></details><hr /><br />
+
+</details>
+</div>
+
+
+
