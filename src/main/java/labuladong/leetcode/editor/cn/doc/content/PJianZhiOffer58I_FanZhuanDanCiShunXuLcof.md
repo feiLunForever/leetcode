@@ -6,11 +6,11 @@
 
 <div id="labuladong"><hr>
 
-**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 已更新到 V2.1，[手把手刷二叉树系列课程](https://aep.xet.tech/s/3YGcq3) 上线。**
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 和 [递归算法专题课](https://aep.xet.tech/s/3YGcq3) 限时附赠网站会员！[第 21 期打卡挑战](https://opedk.xet.tech/s/4ptSo2) 开始报名！**
 
 
 
-<p><strong><a href="https://labuladong.github.io/article/slug.html?slug=fan-zhuan-dan-ci-shun-xu-lcof" target="_blank">⭐️labuladong 题解</a></strong></p>
+<p><strong><a href="https://labuladong.gitee.io/article/slug.html?slug=fan-zhuan-dan-ci-shun-xu-lcof" target="_blank">⭐️labuladong 题解</a></strong></p>
 <details><summary><strong>labuladong 思路</strong></summary>
 
 ## 基本思路
@@ -362,6 +362,13 @@ function reverse(arr, i, j) {
 </div></div>
 </div></div>
 
+<details open><summary><strong>👉 算法可视化 👈</strong></summary><div class="resizable aspect-ratio-container" style="height: 70vh;">
+    <iframe src="https://labuladong.github.io/algo-visualize/" width="100%"
+    height="100%" scrolling="auto" frameborder="0"
+    style="overflow: auto;" id="iframe_reverse-words-in-a-string"></iframe>
+</div>
+<div id="data_reverse-words-in-a-string" data="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"></div></details><hr /><br />
+
 **类似题目**：
   - [1260. 二维网格迁移 🟢](/problems/shift-2d-grid)
   - [48. 旋转图像 🟠](/problems/rotate-image)
@@ -372,6 +379,8 @@ function reverse(arr, i, j) {
 
 </details>
 </div>
+
+
 
 
 

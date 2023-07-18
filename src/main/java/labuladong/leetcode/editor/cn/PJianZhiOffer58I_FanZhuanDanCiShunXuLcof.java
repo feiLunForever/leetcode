@@ -33,6 +33,35 @@ public class PJianZhiOffer58I_FanZhuanDanCiShunXuLcof {
                 if (r < 0) break;
                 int l = r - 1;
                 while (l >= 0 && s.charAt(l) != ' ') --l;
+                sb.append(s, l + 1, r + 1);
+                sb.append(' ');
+                r = l;
+            }
+            return sb.length() == 0 ? "" : sb.substring(0, sb.length() - 1);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*public String reverseWords(String s) {
+            int r = s.length() - 1;
+            StringBuilder sb = new StringBuilder();
+            while (r >= 0) {
+                while (r >= 0 && s.charAt(r) == ' ') --r;
+                if (r < 0) break;
+                int l = r - 1;
+                while (l >= 0 && s.charAt(l) != ' ') --l;
                 for (int i = l + 1; i <= r; i++) {
                     sb.append(s.charAt(i));
                 }
@@ -40,7 +69,7 @@ public class PJianZhiOffer58I_FanZhuanDanCiShunXuLcof {
                 r = l;
             }
             return sb.length() > 1 ? sb.substring(0, sb.length() - 1) : "";
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
