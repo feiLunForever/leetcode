@@ -39,12 +39,12 @@ import labuladong.TreeNode;
  * Maximum Depth of Binary Tree
  *
  * @author DY
- * @date 2023-07-21 17:11:45
+ * @date 2023-07-21 17:15:38
  */
-public class POne04_MaximumDepthOfBinaryTree {
+public class POne04_MaximumDepthOfBinaryTree_01 {
     public static void main(String[] args) {
         //测试代码
-        Solution solution = new POne04_MaximumDepthOfBinaryTree().new Solution();
+        Solution solution = new POne04_MaximumDepthOfBinaryTree_01().new Solution();
     }
 
 //力扣代码
