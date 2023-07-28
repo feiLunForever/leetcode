@@ -24,13 +24,14 @@ public class PJianZhiOffer42_LianXuZiShuZuDeZuiDaHeLcof_01 {
     class Solution {
         public int maxSubArray(int[] nums) {
             int n = nums.length;
-            int[] dp = new int[n]; // dp[i] => dp[0...i] 最大连续子数组的和
-            dp[0] = nums[0];
+//            int[] dp = new int[n]; // dp[i] => dp[0...i] 最大连续子数组的和
+            int dp_0 = nums[0];
             int max = nums[0];
             for (int i = 1; i < n; i++) {
-                dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
-                max = Math.max(max, dp[i]);
-            }
+                int dp_i = Math.max(dp_0 + nums[i], nums[i]);
+                max = Math.max(max, dp_i);
+				dp_0 = dp_i;
+			}
             return max;
         }
     }
