@@ -28,7 +28,7 @@ public class PJianZhiOffer13_JiQiRenDeYunDongFanWeiLcof_01 {
         }
 
         private int dfs(int m, int n, int i, int j, int k, boolean[][] used) {
-            if (i >= m || j >= n || bitSum(i) + bitSum(j) > k) {
+            if (i >= m || j >= n || used[i][j] || (bitSum(i) + bitSum(j)) > k) {
                 return 0;
             }
             used[i][j] = true;
