@@ -33,7 +33,7 @@ public class PJianZhiOffer47_LiWuDeZuiDaJieZhiLcof_01 {
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
                 }
             }
-            return dp[m-1][n-1];
+            return dp[m - 1][n - 1];
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
