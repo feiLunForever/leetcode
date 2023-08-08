@@ -25,44 +25,45 @@ public class PJianZhiOffer59I_HuaDongChuangKouDeZuiDaZhiLcof_01 {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        class MonoQueue {
+		class MonotonicQueue {
 
-            private final LinkedList<Integer> data = new LinkedList<>();
+			private final LinkedList<Integer> queue;
 
-            public void pop(int n) {
-                if (data.getFirst() == n) {
-                    data.removeFirst();
-                }
-            }
+			MonotonicQueue(int capacity) {
+				this.queue = new LinkedList<>();
+			}
 
-            public void push(int n) {
-                while (!data.isEmpty() && data.getLast() < n) {
-                    data.removeLast();
-                }
-                data.addLast(n);
-            }
+			public void put(int value) {
+				while (!queue.isEmpty() && queue.getLast() < value) {
+					queue.removeLast();
+				}
+				queue.addLast(value);
+			}
 
-            public int max() {
-                return data.getFirst();
-            }
+			public int max() {
+				return queue.getFirst();
+			}
 
-        }
+			public void remove(int value) {
+				if (value == queue.getFirst()) {
+					queue.removeFirst();
+				}
+			}
+		}
 
         public int[] maxSlidingWindow(int[] nums, int k) {
-            MonoQueue monoQueue = new MonoQueue();
-            int[] res = new int[nums.length - k + 1];
-            int j = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (i < k - 1) {
-                    monoQueue.push(nums[i]);
-                } else {
-                    monoQueue.push(nums[i]);
-                    res[j++] = monoQueue.max();
-                    monoQueue.pop(nums[i - k + 1]);
-                }
-            }
-
-            return res;
+			MonotonicQueue window = new MonotonicQueue(k);
+			int[] res = new int[nums.length - k + 1];
+			int i = 0, j = 0;
+			for (; i < k - 1; i++) {
+				window.put(nums[i]);
+			}
+			for (; i < nums.length; i++) {
+				window.put(nums[i]);
+				res[j++] = window.max();
+				window.remove(nums[i - k + 1]);
+			}
+			return res;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
