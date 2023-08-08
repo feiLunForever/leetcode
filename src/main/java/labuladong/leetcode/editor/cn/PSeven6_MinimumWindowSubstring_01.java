@@ -83,7 +83,7 @@ public class PSeven6_MinimumWindowSubstring_01 {
                 if (need.containsKey(ch) && need.get(ch).equals(window.get(ch))) {
                     ++match;
                 }
-                while (match == need.size()) {
+                while (match == need.size()) { // 当窗口完全包含目标字符时，调整窗口
                     if (r - l < len) { // 更新结果
                         len = r - l;
                         start = l;
