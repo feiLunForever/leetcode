@@ -62,8 +62,8 @@ public class PFive9_SpiralMatrixIi_01 {
             if (y1 == y2) {
                 for (int i = x1; i <= x2; i++) {
                     rs[i][y1] = x++;
-                    return;
                 }
+                return;
             }
             for (int i = y1; i < y2; i++) rs[x1][i] = x++;
             for (int i = x1; i < x2; i++) rs[i][y2] = x++;
