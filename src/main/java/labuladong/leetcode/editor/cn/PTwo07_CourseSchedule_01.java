@@ -46,6 +46,7 @@ package labuladong.leetcode.editor.cn;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Course Schedule
@@ -62,7 +63,41 @@ public class PTwo07_CourseSchedule_01 {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public boolean canFinish(int numCourses, int[][] prerequisites) {
+            List<Integer>[] graph = buildGraph(numCourses, prerequisites);
+
+            int[] inDegree = new int[numCourses];
+            for (int[] edge : prerequisites) {
+                int from = edge[1];
+                int to = edge[0];
+                inDegree[to]++;
+            }
+
+            Queue<Integer> q = new LinkedList<>();
+            for (int i = 0; i < numCourses; i++) {
+                if (inDegree[i] == 0) {
+                    q.offer(i);
+                }
+            }
+
+            int count = 0;
+            while (!q.isEmpty()) {
+                int cur = q.poll();
+                ++count;
+                for (int next : graph[cur]) {
+                    inDegree[next]--;
+                    if (inDegree[next] == 0) {
+                        q.offer(next);
+                    }
+                }
+            }
+
+            return count == numCourses;
+        }
+
+
+        public boolean canFinish1(int numCourses, int[][] prerequisites) {
             List<Integer>[] graph = buildGraph(numCourses, prerequisites);
             boolean[] visited = new boolean[numCourses];
             boolean[] onPath = new boolean[numCourses];
