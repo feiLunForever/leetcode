@@ -54,6 +54,7 @@ package labuladong.leetcode.editor.cn;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Course Schedule II
@@ -65,16 +66,49 @@ public class PTwo10_CourseScheduleIi_01 {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new PTwo10_CourseScheduleIi_01().new Solution();
-        solution.findOrder(2,new int[0][]);
+        solution.findOrder(2, new int[0][]);
     }
 
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
+        public int[] findOrder(int numCourses, int[][] prerequisites) {
+            List<Integer>[] graph = buildGraph(numCourses, prerequisites);
+            int[] res = new int[numCourses];
+            int[] inDegree = new int[numCourses];
+            for (int[] edge : prerequisites) {
+                int from = edge[1];
+                int to = edge[0];
+                inDegree[to]++;
+            }
+            Queue<Integer> q = new LinkedList<>();
+            for (int i = 0; i < numCourses; i++) {
+                if (inDegree[i] == 0) {
+                    q.offer(i);
+                }
+            }
+
+            int i = 0;
+            while (!q.isEmpty()) {
+                int cur = q.poll();
+                res[i] = cur;
+                i++;
+                for (int next : graph[cur]) {
+                    inDegree[next]--;
+                    if (inDegree[next] == 0) {
+                        q.offer(next);
+                    }
+                }
+            }
+            if (i != numCourses) return new int[0];
+            return res;
+        }
+
+
         private boolean hasCircle = false;
 
-        public int[] findOrder(int numCourses, int[][] prerequisites) {
+        public int[] findOrder1(int numCourses, int[][] prerequisites) {
             List<Integer>[] graph = buildGraph(numCourses, prerequisites);
             List<Integer> order = new LinkedList<>();
             boolean[] visited = new boolean[numCourses];
