@@ -41,7 +41,9 @@
 package labuladong.leetcode.editor.cn;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * Min Cost to Connect All Points
@@ -59,7 +61,76 @@ public class POne584_MinCostToConnectAllPoints_01 {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
-        private class UF {
+        public int minCostConnectPoints(int[][] points) {
+            List<int[]>[] graph = buildGraph(points);
+
+            Prim prim = new Prim(graph);
+
+            return prim.weightSum();
+        }
+
+        private class Prim {
+            private PriorityQueue<int[]> q;
+
+            private boolean[] onPath;
+
+            private int sum = 0;
+
+            public Prim(List<int[]>[] graph) {
+                int n = graph.length;
+                this.q = new PriorityQueue<int[]>((a, b) -> {
+                    return a[2] - b[2];
+                });
+                this.onPath = new boolean[n];
+
+                onPath[0] = true;
+                cut(graph, 0);
+
+                while (!q.isEmpty()) {
+                    int[] edge = q.poll();
+                    int to = edge[1];
+                    int weight = edge[2];
+                    if (onPath[to]) continue;
+
+                    sum += weight;
+                    onPath[to] = true;
+                    cut(graph, to);
+                }
+            }
+
+            private void cut(List<int[]>[] graph, int x) {
+                for (int[] edge : graph[x]) {
+                    int to = edge[1];
+                    if (onPath[to]) continue;
+                    q.offer(edge);
+                }
+            }
+
+            // 最小生成树的权重和
+            public int weightSum() {
+                return sum;
+            }
+        }
+
+        private List<int[]>[] buildGraph(int[][] points) {
+            int n = points.length;
+            List<int[]>[] graph = new LinkedList[n];
+            for (int i = 0; i < n; i++) {
+                graph[i] = new LinkedList<>();
+            }
+            for (int i = 0; i < n; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    int xi = points[i][0], yi = points[i][1];
+                    int xj = points[j][0], yj = points[j][1];
+                    int weight = Math.abs(xi - xj) + Math.abs(yi - yj);
+                    graph[i].add(new int[]{i, j, weight});
+                    graph[j].add(new int[]{j, i, weight});
+                }
+            }
+            return graph;
+        }
+
+        /*private class UF {
             private int[] parent;
 
             public UF(int n) {
@@ -87,7 +158,7 @@ public class POne584_MinCostToConnectAllPoints_01 {
             }
         }
 
-        public int minCostConnectPoints(int[][] points) {
+        public int minCostConnectPoints1(int[][] points) {
             int n = points.length;
             List<int[]> edges = buildEdge(points);
             edges.sort((a, b) -> a[2] - b[2]);
@@ -120,7 +191,7 @@ public class POne584_MinCostToConnectAllPoints_01 {
                 }
             }
             return edges;
-        }
+        }*/
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
