@@ -143,8 +143,8 @@ public class topKFrequent_347 {
 
 
     public static void main(String[] args) {
-        int[] ints = topKFrequent2(new int[]{4, 1, -1, 2, -1, 2, 3}, 2);
-        System.out.println();
+        int[] ints = topKFrequent2(new int[]{3,2,3,1,2,4,5,5,6}, 4);
+        System.out.println(Arrays.toString(ints));
     }
 
 
